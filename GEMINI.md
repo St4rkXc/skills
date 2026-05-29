@@ -2,7 +2,7 @@
 
 This is my personal repository for developing, organizing, and managing AI agent skills. It acts as the central hub for the custom workflows, planning tools, and reference materials I use to enhance my Gemini CLI experience.
 
-## Skills Overview
+## Directory Overview
 
 - `hybrid-plan/`: Contains skills and planning documentation for enforcing a strict, two-phase development discipline: **ARCHITECT** (planning) and **BUILDER** (execution). Use this for feature implementation, refactoring, and migrations.
 - `prd-spawnner/`: Contains skills and reference materials (templates, tech stacks) for generating comprehensive, professional Product Requirement Documents (PRDs). Use this for product ideation and initial requirements definition.
