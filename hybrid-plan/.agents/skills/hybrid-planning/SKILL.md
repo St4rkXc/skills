@@ -1,11 +1,11 @@
 ---
-name: hybrid-planning-execution
+name: hybrid-planning
 description: >
     Activate this skill for ANY software development task that involves planning a feature,
     refactoring, migration (e.g. JS → TS, REST → tRPC), architecture design, or multi-step
     implementation. Trigger on phrases like "plan this", "architect", "design the system",
     "implement based on the plan", "build this feature", "migrate", "refactor", "add feature",
-    or when a `.plan/` directory or `.plan/*.md` file is referenced. This skill enforces two
+    or when a `plan/` directory or `plan/*.md` file is referenced. This skill enforces two
     strict operating modes — ARCHITECT (plan only, zero application code) and BUILDER (execute
     only, zero theory) — and must be consulted before writing any plan document or implementation
     code. Never mix the two modes in a single response.
@@ -49,9 +49,9 @@ Determine the correct mode at the start of every response using this decision ta
 | Condition                                                                           | Mode                                 |
 | ----------------------------------------------------------------------------------- | ------------------------------------ |
 | User requests new feature, major refactor, or migration                             | ARCHITECT                            |
-| `.plan/` directory is empty or no relevant plan file exists                         | ARCHITECT                            |
+| `plan/` directory is empty or no relevant plan file exists                         | ARCHITECT                            |
 | User says "plan", "design", "architect", "think through"                            | ARCHITECT                            |
-| A `.plan/*.md` exists AND user says "implement", "build", "write", "fix", "execute" | BUILDER                              |
+| A `plan/*.md` exists AND user says "implement", "build", "write", "fix", "execute" | BUILDER                              |
 | User says "continue" and a validated plan is in scope                               | BUILDER → run Context Snapshot first |
 | New session detected (no prior context) with an IN PROGRESS plan                    | BUILDER → run Context Snapshot first |
 | A Builder step requires changes **not covered by the plan**                         | → Pause → ARCHITECT (mini-plan)      |
@@ -73,16 +73,16 @@ Determine the correct mode at the start of every response using this decision ta
 Activate when:
 
 - User requests a new feature, migration, or major refactor
-- No `.plan/` file exists for the current task
+- No `plan/` file exists for the current task
 - An existing plan is incomplete, stale, or contradicts the current codebase state
 - Builder mode discovers a scope gap (undocumented dependency, missing type, unhandled edge case)
 
 ### 2.2 Hard Rules
 
-- **ZERO application code.** Do not write, edit, or suggest code outside `.plan/`.
+- **ZERO application code.** Do not write, edit, or suggest code outside `plan/`.
 - **ZERO shortcuts.** A lazy plan (< 300 lines, vague steps, missing interfaces) is a direct skill violation.
-- **ONE plan, ONE file.** Each feature/migration gets its own file: `.plan/<feature-name>.plan.md`.
-- **Remind the user** to add `.plan/` to `.gitignore` if not already done.
+- **ONE plan, ONE file.** Each feature/migration gets its own file: `plan/<feature-name>.plan.md`.
+- **Remind the user** to add `plan/` to `.gitignore` if not already done.
 
 ### 2.3 Pre-Planning Checklist (run before writing the plan)
 
@@ -99,7 +99,7 @@ Before drafting, perform a silent codebase audit and answer these internally:
 
 ### 2.4 Plan Document Structure (Mandatory)
 
-Every `.plan/*.plan.md` must follow this exact structure. Sections cannot be skipped.
+Every `plan/*.plan.md` must follow this exact structure. Sections cannot be skipped.
 
 ````markdown
 # Plan: <Feature / Task Name>
@@ -273,11 +273,11 @@ re-brief you.
 
 **Steps (run silently before any code output):**
 
-1. Read the active `.plan/*.plan.md` file
+1. Read the active `plan/*.plan.md` file
 2. Count completed (`✅`) vs pending (`⬜`) steps in the checklist
 3. Identify the last completed step and the next pending step
 4. Check if any open scope gaps exist (look for `⚠️ SCOPE GAP` markers in the plan or chat)
-5. Read `.plan/_debt.md` if it exists — note any debt items tagged to the active plan
+5. Read `plan/_debt.md` if it exists — note any debt items tagged to the active plan
 6. Output the snapshot block below, then proceed immediately to the next step
 
 **Snapshot Output Format:**
@@ -295,7 +295,7 @@ Resuming At : ⚙️ Step 6 — <description>
 Remaining : ⬜ Steps 6–12
 
 Open Gaps : none | ⚠️ <description if any>
-Debt Items : 2 logged (see .plan/\_debt.md)
+Debt Items : 2 logged (see plan/\_debt.md)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Resuming Step 6 now...
 
@@ -306,7 +306,7 @@ Resuming Step 6 now...
 - If the plan file is missing or unreadable, output:
 ```
 
-⛔ SNAPSHOT FAILED — Cannot locate active plan in .plan/
+⛔ SNAPSHOT FAILED — Cannot locate active plan in plan/
 Please confirm the plan file path to resume.
 
 ```
@@ -317,7 +317,7 @@ Please confirm the plan file path to resume.
 ### 3.1 Trigger Conditions
 
 Activate only when:
-- A `.plan/*.plan.md` exists with **Status: APPROVED** or user explicitly approves
+- A `plan/*.plan.md` exists with **Status: APPROVED** or user explicitly approves
 - User provides an execution instruction ("implement step 3", "continue", "build it")
 
 ### 3.2 Token Optimization — Strict Protocol
@@ -354,7 +354,7 @@ Then go straight to code.
 
 ⚠️ SCOPE GAP DETECTED
 Step N requires: <what's missing>
-Not covered in plan: .plan/<file>.plan.md
+Not covered in plan: plan/<file>.plan.md
 Recommended action: Return to ARCHITECT MODE for a mini-plan update before continuing.
 
 ```
@@ -384,7 +384,7 @@ Progress: 4 / 12 steps complete
 
 **Purpose:** During Builder execution, you will often notice things that *should* be fixed but
 are outside the current plan's scope. Do not ignore them. Do not raise a full scope gap for them.
-Log them to `.plan/_debt.md` and move on — zero disruption to the current build.
+Log them to `plan/_debt.md` and move on — zero disruption to the current build.
 
 **Debt vs Scope Gap — Know the Difference:**
 
@@ -400,14 +400,14 @@ Log them to `.plan/_debt.md` and move on — zero disruption to the current buil
 **When logging debt, output a single inline notice (1 line max):**
 ```
 
-📝 Debt logged: <brief description> → .plan/\_debt.md
+📝 Debt logged: <brief description> → plan/\_debt.md
 
 ````
 Then continue with the current step. Do not expand on it unless asked.
 
 **`_debt.md` Entry Format:**
 
-Each entry appended to `.plan/_debt.md`:
+Each entry appended to `plan/_debt.md`:
 ```markdown
 ## [DEBT-<N>] <Short Title>
 **Logged:** YYYY-MM-DD
@@ -486,7 +486,7 @@ When a scope gap is detected mid-execution:
 ## 5. DIRECTORY CONVENTIONS
 
 ```
-.plan/
+plan/
 ├── <feature>.plan.md       ← primary plan documents
 ├── <migration>.plan.md
 ├── _debt.md                ← auto-maintained debt log (never delete)
@@ -494,7 +494,7 @@ When a scope gap is detected mid-execution:
     └── <feature>.plan.md
 ```
 
-> ⚠️ Add `.plan/` to your `.gitignore` to keep version control clean.
+> ⚠️ Add `plan/` to your `.gitignore` to keep version control clean.
 > Exception: if your team wants shared visibility into plans, commit selectively.
 
 **Naming convention:** `kebab-case` matching the feature branch name where possible.
@@ -508,7 +508,7 @@ Example: `auth-email-verification.plan.md`
 ┌─────────────────────────────────────────────────────┐
 │  ARCHITECT MODE           │  BUILDER MODE             │
 │───────────────────────────│───────────────────────────│
-│  ✅ Write .plan/*.md      │  ✅ Context Snapshot first│
+│  ✅ Write plan/*.md      │  ✅ Context Snapshot first│
 │  ✅ Define interfaces      │  ✅ Write application code│
 │  ✅ Map edge cases         │  ✅ Follow plan contracts │
 │  ❌ No app code            │  ✅ Log debt to _debt.md  │
@@ -538,4 +538,4 @@ DRAFT → APPROVED → IN PROGRESS → COMPLETE → (archive)
 | Asking "where did we leave off?" at session start              | Wastes user time, breaks flow                   | Run Context Snapshot silently from the plan file |
 | Raising a scope gap for minor out-of-scope issues              | Blocks momentum unnecessarily                   | Log to `_debt.md`, continue building             |
 | Ignoring `_debt.md` after plan completes                       | Debt accumulates, codebase degrades silently    | Run debt triage after every COMPLETE plan        |
-| Deleting completed plans from `.plan/`                         | Loses architectural history and rationale       | Move to `.plan/_archive/`, never delete          |
+| Deleting completed plans from `plan/`                         | Loses architectural history and rationale       | Move to `plan/_archive/`, never delete          |
