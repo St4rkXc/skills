@@ -26,47 +26,47 @@ When triggered, immediately enter interview mode. Present all questions in a sin
 Use this exact opening:
 
 ```
-Oke, sebelum gua generate PRD-nya, gua butuh ngerti project lo lebih dalam dulu.
-Jawab semua yang bisa lo jawab — skip yang belum lo tau, nanti bisa kita isi bareng.
+Alright, before I generate the PRD, I need to understand your project a bit deeper.
+Answer everything you can — skip what you're not sure about, we can fill those in together later.
 ```
 
 ### Core Interview Questions
 
 Group questions into sections so it feels organized, not overwhelming.
 
-#### 🎯 Tentang Produk
+#### 🎯 About the Product
 
-1. Apa nama produk / app yang mau lo bangun?
-2. Dalam 1-2 kalimat, produk ini ngapain? (elevator pitch)
-3. Masalah spesifik apa yang dipecahin?
-4. Siapa target user-nya? (demografi, skill level, context of use)
+1. What is the name of the product / app you want to build?
+2. In 1-2 sentences, what does this product do? (elevator pitch)
+3. What specific problem does it solve?
+4. Who is the target user? (demographics, skill level, context of use)
 
 #### 🖥️ Platform & Scope
 
-5. Platform apa yang dituju? (Web app / Mobile iOS / Mobile Android / Desktop / API-only / semua?)
-6. Ini MVP (minimum viable product) atau full product?
-7. Ada fitur yang WAJIB ada di v1? List semuanya.
-8. Ada fitur nice-to-have tapi bisa nanti? List juga.
+5. What platforms are you targeting? (Web app / Mobile iOS / Mobile Android / Desktop / API-only / all?)
+6. Is this an MVP (minimum viable product) or a full product?
+7. What are the MUST-HAVE features for v1? List them all.
+8. What are the nice-to-have features? List them as well.
 
-#### ⚙️ Tech & Arsitektur
+#### ⚙️ Tech & Architecture
 
-9. Ada tech stack preference? (kalau gak tau, tulis "terserah" dan gua rekomendasiin)
-10. Perlu integrasi dengan sistem atau third-party service lain? (payment, auth, maps, AI, dll)
-11. Udah ada codebase yang jalan? Atau greenfield?
-12. Perlu backend sendiri, atau serverless/BaaS (Firebase, Supabase, dll)?
+9. Do you have a tech stack preference? (If you're not sure, write "recommend me one")
+10. Does it need integration with other systems or third-party services? (payment, auth, maps, AI, etc.)
+11. Do you already have an existing codebase? Or is this greenfield?
+12. Do you need a dedicated backend, or serverless/BaaS (Firebase, Supabase, etc.)?
 
-#### 📊 Scale & Bisnis
+#### 📊 Scale & Business
 
-13. Estimasi user di launch: berapa? 6 bulan ke depan: berapa?
-14. Ada model bisnis? (freemium, subscription, marketplace, dll)
-15. Ada compliance/regulasi yang perlu diperhatiin? (GDPR, HIPAA, PCI-DSS, Kominfo, dll)
-16. Siapa kompetitor terdekat? Apa yang bikin produk ini beda?
+13. Estimated users at launch: how many? 6 months out: how many?
+14. Do you have a business model? (freemium, subscription, marketplace, etc.)
+15. Are there any compliance/regulations to consider? (GDPR, HIPAA, PCI-DSS, etc.)
+16. Who are your closest competitors? What makes your product different?
 
-#### 👥 Tim & Timeline
+#### 👥 Team & Timeline
 
-17. Berapa orang di tim? Apa role-nya?
-18. Target launch kapan?
-19. Ada budget constraint yang perlu masuk planning?
+17. How many people are on the team? What are their roles?
+18. What is the target launch date?
+19. Are there budget constraints to include in the planning?
 
 ### Handling incomplete answers
 
@@ -83,10 +83,10 @@ The user won't always answer everything. That's fine. Use these fallback strateg
 After collecting answers, give a quick summary:
 
 ```
-Oke, ini yang gua tangkep dari lo:
+Alright, here's what I've captured:
 [bullet summary of key points]
 
-Gua mau generate PRD sekarang. Ada yang perlu diubah dulu?
+I'm ready to generate the PRD now. Is there anything you'd like to change or add first?
 ```
 
 Wait for confirmation, then proceed to Phase 2.
@@ -95,7 +95,7 @@ Wait for confirmation, then proceed to Phase 2.
 
 ## Phase 2: PRD Generation
 
-Generate the PRD as a single `.md` file saved to `/mnt/user-data/outputs/[product-name]-PRD.md`.
+Generate the PRD as a single `.md` file saved to `plan/prd/[product-name]-PRD.md`.
 
 **Minimum length: 800 lines.** This is not arbitrary — professional PRDs are thorough. If a section feels thin, go deeper. Add diagrams using Mermaid syntax. Add tables. Add code examples for API contracts.
 
@@ -127,13 +127,13 @@ Always include at least these diagrams (rendered in Mermaid):
 Present the file using `present_files`. Then say:
 
 ```
-PRD udah jadi — [X] lines, siap dijadiin north star project lo.
+The PRD is ready — [X] lines, ready to serve as your project's north star.
 
-Beberapa hal yang gua highlight dari PRD ini:
+Here are a few highlights from this PRD:
 - [top 3 most important technical decisions made]
 - [top risk called out]
 
-Lo bisa langsung share ini ke tim, atau kita bisa refine bagian tertentu kalau ada yang kurang pas.
+You can share this directly with your team, or we can refine specific sections if anything needs adjustment.
 ```
 
 ---
