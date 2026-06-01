@@ -1,11 +1,9 @@
 ---
 name: hybrid-planning
 description: >
-    Activate this skill for ANY software development task that involves planning a feature,
-    refactoring, migration (e.g. JS → TS, REST → tRPC), architecture design, or multi-step
-    implementation. Trigger on phrases like "plan this", "architect", "design the system",
-    "implement based on the plan", "build this feature", "migrate", "refactor", "add feature",
-    or when a `plan/` directory or `plan/*.md` file is referenced. This skill enforces two
+    Activate this skill ONLY by using the `/hybrid-plan` slash command.
+    Use `/hybrid-plan` to initiate ARCHITECT mode (for planning) and `/hybrid-plan execute <file>`
+    to initiate BUILDER mode (for execution). This skill enforces two
     strict operating modes — ARCHITECT (plan only, zero application code) and BUILDER (execute
     only, zero theory) — and must be consulted before writing any plan document or implementation
     code. Never mix the two modes in a single response.
@@ -41,19 +39,15 @@ responses are a skill violation.
 ```
 
 ---
-
 ## 1. MODE DETECTION
 
-Determine the correct mode at the start of every response using this decision table:
+Determine the correct mode based on the `/hybrid-plan` command used:
 
-| Condition                                                                           | Mode                                 |
+| Command | Mode |
 | ----------------------------------------------------------------------------------- | ------------------------------------ |
-| User requests new feature, major refactor, or migration                             | ARCHITECT                            |
-| `plan/` directory is empty or no relevant plan file exists                         | ARCHITECT                            |
-| User says "plan", "design", "architect", "think through"                            | ARCHITECT                            |
-| A `plan/*.md` exists AND user says "implement", "build", "write", "fix", "execute" | BUILDER                              |
+| `/hybrid-plan`                                                                      | ARCHITECT                            |
+| `/hybrid-plan execute <file>`                                                       | BUILDER                              |
 | User says "continue" and a validated plan is in scope                               | BUILDER → run Context Snapshot first |
-| New session detected (no prior context) with an IN PROGRESS plan                    | BUILDER → run Context Snapshot first |
 | A Builder step requires changes **not covered by the plan**                         | → Pause → ARCHITECT (mini-plan)      |
 | Builder discovers a fixable issue that is **out of scope**                          | → Log to `_debt.md` → continue       |
 
@@ -63,7 +57,6 @@ Determine the correct mode at the start of every response using this decision ta
 [ARCHITECT MODE] — Planning: <feature-name>
 [BUILDER MODE]   — Executing: <plan-file>.md / Step <N> of <total>
 ```
-
 ---
 
 ## 2. ARCHITECT MODE
@@ -72,7 +65,7 @@ Determine the correct mode at the start of every response using this decision ta
 
 Activate when:
 
-- User requests a new feature, migration, or major refactor
+- User invokes `/hybrid-plan` command to start a new task
 - No `plan/` file exists for the current task
 - An existing plan is incomplete, stale, or contradicts the current codebase state
 - Builder mode discovers a scope gap (undocumented dependency, missing type, unhandled edge case)
@@ -317,8 +310,8 @@ Please confirm the plan file path to resume.
 ### 3.1 Trigger Conditions
 
 Activate only when:
-- A `plan/*.plan.md` exists with **Status: APPROVED** or user explicitly approves
-- User provides an execution instruction ("implement step 3", "continue", "build it")
+- User invokes `/hybrid-plan execute <plan-file>` command.
+- A `plan/*.plan.md` exists with **Status: APPROVED** or user explicitly approves.
 
 ### 3.2 Token Optimization — Strict Protocol
 
