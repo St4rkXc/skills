@@ -6,11 +6,11 @@ This repository is my personal lab for designing, testing, and refining custom A
 
 ## Available Skills
 
-| Skill | Version | Description |
-| :--- | :--- | :--- |
-| `hybrid-planning` | 1.1.0 | Enforces a strict, two-phase ARCHITECT/BUILDER workflow. |
-| `prd-spawnner` | 1.0.0 | Automates professional PRD generation via structured interviews. |
-| `vibe-prd` | 1.0.3 | An alternative/refined PRD generator with an English-first interview process. |
+| Skill             | Version | Description                                                                      |
+| :---------------- | :------ | :------------------------------------------------------------------------------- |
+| `hybrid-planning` | 1.1.0   | Enforces a strict, two-phase ARCHITECT/BUILDER workflow.                         |
+| `prd-spawnner`    | 1.0.0   | Automates professional PRD generation via structured interviews.                 |
+| `vibe-prd`        | 1.0.3   | An alternative/refined Vibe-Coded-Ready-PRD generator with an interview process. |
 
 ## What's Inside
 
@@ -22,7 +22,7 @@ This repo acts as the home for my experimental workflows:
 
 ## Why I Built This
 
-I believe that the true power of AI agents is unlocked not by *more* code, but by *better* processes. By formalizing my interactions into reusable skills, I can:
+I believe that the true power of AI agents is unlocked not by _more_ code, but by _better_ processes. By formalizing my interactions into reusable skills, I can:
 
 1.  **Reduce Ambiguity:** Ensure every feature has a well-defined contract before implementation.
 2.  **Improve Reliability:** Maintain rigorous standards for planning, documentation, and technical debt management.
@@ -36,4 +36,5 @@ Feel free to explore the contents. While this is primarily my personal workspace
 - **Have ideas for improvement?** Feel free to open an issue or submit a PR if you have suggestions for refining these skills.
 
 ---
-*Built for the Gemini CLI ecosystem.*
+
+_Built for the Gemini CLI ecosystem._
