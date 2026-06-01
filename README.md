@@ -10,7 +10,7 @@ This repository is my personal lab for designing, testing, and refining custom A
 | :---------------- | :------ | :------------------------------------------------------------------------------- |
 | `hybrid-planning` | 1.1.0   | Enforces a strict, two-phase ARCHITECT/BUILDER workflow.                         |
 | `prd-spawnner`    | 1.0.0   | Automates professional PRD generation via structured interviews.                 |
-| `vibe-prd`        | 1.0.3   | An alternative/refined Vibe-Coded-Ready-PRD generator with an interview process. |
+| `vibe-prd`        | 1.0.3   | Vibe-Coded-Ready-PRD generator with an interview process. |
 
 ## What's Inside
 
