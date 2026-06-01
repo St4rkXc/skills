@@ -26,46 +26,52 @@ When triggered, immediately enter interview mode. Present all questions in a sin
 Use this exact opening:
 
 ```
-Oke, sebelum gua generate PRD-nya, gua butuh ngerti project lo lebih dalam dulu.
-Jawab semua yang bisa lo jawab — skip yang belum lo tau, nanti bisa kita isi bareng.
+Alright, before I generate the PRD, I need to understand your project in more detail first.
+Answer whatever you can — feel free to skip the ones you don't know yet, we can fill them in together later.
 ```
 
 ### Core Interview Questions
 
 Group questions into sections so it feels organized, not overwhelming.
 
-#### 🎯 Tentang Produk
-1. Apa nama produk / app yang mau lo bangun?
-2. Dalam 1-2 kalimat, produk ini ngapain? (elevator pitch)
-3. Masalah spesifik apa yang dipecahin?
-4. Siapa target user-nya? (demografi, skill level, context of use)
+#### 🎯 Product Overview
+
+1. What is the name of the product / application you want to build?
+2. In 1-2 sentences, what does this product do? (elevator pitch)
+3. What specific problem does it solve?
+4. Who are the target users? (demographics, skill level, context of use)
 
 #### 🖥️ Platform & Scope
-5. Platform apa yang dituju? (Web app / Mobile iOS / Mobile Android / Desktop / API-only / semua?)
-6. Ini MVP (minimum viable product) atau full product?
-7. Ada fitur yang WAJIB ada di v1? List semuanya.
-8. Ada fitur nice-to-have tapi bisa nanti? List juga.
 
-#### ⚙️ Tech & Arsitektur
-9. Ada tech stack preference? (kalau gak tau, tulis "terserah" dan gua rekomendasiin)
-10. Perlu integrasi dengan sistem atau third-party service lain? (payment, auth, maps, AI, dll)
-11. Udah ada codebase yang jalan? Atau greenfield?
-12. Perlu backend sendiri, atau serverless/BaaS (Firebase, Supabase, dll)?
+5. What are the target platforms? (Web app / Mobile iOS / Mobile Android / Desktop / API-only / all?)
+6. Is this an MVP (minimum viable product) or a full product?
+7. What features are a MUST-have in version 1 (v1)? List all of them.
+8. What features are nice-to-have but can be deferred? List them as well.
 
-#### 📊 Scale & Bisnis
-13. Estimasi user di launch: berapa? 6 bulan ke depan: berapa?
-14. Ada model bisnis? (freemium, subscription, marketplace, dll)
-15. Ada compliance/regulasi yang perlu diperhatiin? (GDPR, HIPAA, PCI-DSS, Kominfo, dll)
-16. Siapa kompetitor terdekat? Apa yang bikin produk ini beda?
+#### ⚙️ Tech & Architecture
 
-#### 👥 Tim & Timeline
-17. Berapa orang di tim? Apa role-nya?
-18. Target launch kapan?
-19. Ada budget constraint yang perlu masuk planning?
+9. Do you have a tech stack preference? (If you don't know, write "any" and I will recommend one)
+10. Does it need integration with other systems or third-party services? (payment, auth, maps, AI, etc.)
+11. Is there an existing codebase running? Or is this a greenfield project?
+12. Do you need a dedicated backend, or serverless/BaaS (Firebase, Supabase, etc.)?
+
+#### 📊 Scale & Business
+
+13. Estimated number of users at launch: how many? 6 months out: how many?
+14. What is the business model? (freemium, subscription, marketplace, etc.)
+15. Are there any compliance/regulatory requirements to consider? (GDPR, HIPAA, PCI-DSS, local regulations, etc.)
+16. Who are the closest competitors? What makes this product unique?
+
+#### 👥 Team & Timeline
+
+17. How many people are on the team? What are their roles?
+18. When is the target launch date?
+19. Are there any budget constraints that should be factored into the planning?
 
 ### Handling incomplete answers
 
 The user won't always answer everything. That's fine. Use these fallback strategies:
+
 - If platform is unknown → assume web-first, mobile-responsive
 - If tech stack is unknown → recommend based on product type (see `references/tech-stacks.md`)
 - If scale is unknown → assume 1K MAU at launch, 10K at 6 months
@@ -75,11 +81,12 @@ The user won't always answer everything. That's fine. Use these fallback strateg
 ### Confirming before generating
 
 After collecting answers, give a quick summary:
+
 ```
-Oke, ini yang gua tangkep dari lo:
+Alright, here is what I have gathered so far:
 [bullet summary of key points]
 
-Gua mau generate PRD sekarang. Ada yang perlu diubah dulu?
+I'm ready to generate the PRD now. Does anything need to be changed first?
 ```
 
 Wait for confirmation, then proceed to Phase 2.
@@ -109,6 +116,7 @@ Read `references/prd-template.md` for the complete template structure and fill e
 ### Mermaid diagrams to include
 
 Always include at least these diagrams (rendered in Mermaid):
+
 1. **System Architecture Overview** — components and how they connect
 2. **Entity Relationship Diagram** — core data models
 3. **Core User Flow** — the primary happy path as a flowchart
@@ -119,13 +127,13 @@ Always include at least these diagrams (rendered in Mermaid):
 Present the file using `present_files`. Then say:
 
 ```
-PRD udah jadi — [X] lines, siap dijadiin north star project lo.
+The PRD has been generated — [X] lines, ready to serve as your project's north star.
 
-Beberapa hal yang gua highlight dari PRD ini:
+Here are a few highlights from this PRD:
 - [top 3 most important technical decisions made]
 - [top risk called out]
 
-Lo bisa langsung share ini ke tim, atau kita bisa refine bagian tertentu kalau ada yang kurang pas.
+You can share this with your team right away, or we can refine specific sections if anything doesn't quite fit.
 ```
 
 ---
