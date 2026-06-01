@@ -4,12 +4,21 @@ Welcome to my **Skills Playground**! 🚀
 
 This repository is my personal lab for designing, testing, and refining custom AI agent skills for the [Gemini CLI](https://github.com/google/gemini-cli). Here, I explore how structured workflows, rigorous planning, and automated documentation can transform LLM interactions from simple chat into highly reliable, engineering-grade assistance.
 
+## Available Skills
+
+| Skill | Version | Description |
+| :--- | :--- | :--- |
+| `hybrid-planning` | 1.1.0 | Enforces a strict, two-phase ARCHITECT/BUILDER workflow. |
+| `prd-spawnner` | 1.0.0 | Automates professional PRD generation via structured interviews. |
+| `vibe-prd` | 1.0.3 | An alternative/refined PRD generator with an English-first interview process. |
+
 ## What's Inside
 
 This repo acts as the home for my experimental workflows:
 
-- **`hybrid-plan/`**: My implementation of a strict, two-phase development discipline. It forces a clear separation between **ARCHITECT** (theory/planning) and **BUILDER** (code execution), ensuring that implementation is always grounded in a validated, comprehensive plan.
-- **`prd-spawnner/`**: A toolset designed to solve the "blank page problem." It automates the generation of professional, engineering-grade Product Requirements Documents (PRDs) by guiding the user through an structured interview before a single line of code is written.
+- **`hybrid-plan/`**: Implementation of a strict, two-phase development discipline. It forces a clear separation between **ARCHITECT** (theory/planning) and **BUILDER** (code execution).
+- **`prd-spawnner/`**: A toolset designed to solve the "blank page problem" by automating the generation of professional PRDs.
+- **`vibe-prd/`**: A refined version of PRD generation with an English-first approach and outputs saved to `plan/prd/`.
 
 ## Why I Built This
 
