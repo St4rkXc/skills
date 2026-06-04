@@ -41,15 +41,20 @@ responses are a skill violation.
 ---
 ## 1. MODE DETECTION
 
-Determine the correct mode based on the `/hybrid-plan` command used:
+Determine the correct mode based on the `/hybrid-plan` command used. **ARCHITECT is the default mode for all new tasks.**
 
 | Command | Mode |
 | ----------------------------------------------------------------------------------- | ------------------------------------ |
 | `/hybrid-plan`                                                                      | ARCHITECT                            |
 | `/hybrid-plan execute <file>`                                                       | BUILDER                              |
-| User says "continue" and a validated plan is in scope                               | BUILDER → run Context Snapshot first |
+| User says "continue build", "next step", or "c" and a plan is `IN PROGRESS`         | BUILDER → run Context Snapshot first |
+| User explicitly approves a plan and says "start building"                           | BUILDER                              |
 | A Builder step requires changes **not covered by the plan**                         | → Pause → ARCHITECT (mini-plan)      |
-| Builder discovers a fixable issue that is **out of scope**                          | → Log to `_debt.md` → continue       |
+
+**Strict Mode Boundary:** 
+- **Never** auto-switch to BUILDER mode simply because a plan exists or is APPROVED. 
+- **Never** assume BUILDER mode for generic follow-up questions or unrelated comments.
+- Require an explicit directive (slash command or "Start building") to enter BUILDER mode for the first time in a session.
 
 **Always state the active mode on the first line of your response:**
 
@@ -311,7 +316,9 @@ Please confirm the plan file path to resume.
 
 Activate only when:
 - User invokes `/hybrid-plan execute <plan-file>` command.
-- A `plan/*.plan.md` exists with **Status: APPROVED** or user explicitly approves.
+- A `plan/*.plan.md` exists with **Status: APPROVED** AND the user explicitly directs to start execution (e.g., "Start building", "Begin execution").
+- The plan is already `IN PROGRESS` and the user provides a continuation command ("c", "next", "continue").
+- **Never** auto-switch to BUILDER mode based on generic follow-up questions or unrelated comments.
 
 ### 3.2 Token Optimization — Strict Protocol
 
@@ -335,14 +342,15 @@ Then go straight to code.
 
 1. **Full block replacements only.** Never output partial files with `// ... rest of code` unless the omitted section is completely unchanged boilerplate (e.g., import blocks in a file you're not touching at all).
 2. **Adhere strictly to plan contracts.** Use interface names, type shapes, and field names exactly as defined in Section 4 of the plan. Deviation is a bug.
-3. **One step per turn.** Do not bundle multiple checklist items into one response unless they are trivially coupled (e.g., creating a file and its barrel export).
-4. **Mark completion.** After each turn, output a single-line status:
+3. **One step per turn (Default).** Implement one checklist item per turn to ensure precision and avoid race conditions.
+4. **Autonomous Flow (Optional).** If the user requests "auto" mode or "execute until done", you may proceed to the next step immediately in the same response if the files involved are different from the previous step. If they are the same, finish the current step and prompt the user to continue.
+5. **Mark completion.** After each turn, output a single-line status:
 ```
 
 ✅ Step 4 complete. Next: Step 5 — <brief description>.
 
 ```
-5. **Scope creep guard.** If implementing a step reveals an undocumented dependency, **stop immediately** and output:
+6. **Scope creep guard.** If implementing a step reveals an undocumented dependency, **stop immediately** and output:
 ```
 
 ⚠️ SCOPE GAP DETECTED
@@ -442,6 +450,18 @@ After archiving a plan, output a triage prompt:
 Recommended: Address High severity items before starting next plan.
 Run: "fix debt items" to begin, or "skip triage" to proceed.
 ```
+
+---
+
+### 3.7 Continuous Execution (Autonomous Flow)
+
+To minimize manual "continue" typing, especially for low-tier models:
+
+- **Shorthand "c":** Always accept "c" as a valid command to proceed to the next step.
+- **Batching:** If two steps are small and touch different files, you are encouraged to execute them both in one turn.
+- **Auto-Prompt:** End every Builder response with a clear, concise call to action:
+  > *Ready for Step N+1? Type "c" to continue.*
+- **Execute Until Done:** If the user grants "until done" permission, you should proactively summarize your intent to finish the remaining steps and ask the user to say "c" for each iteration, while you handle the logic and code without further theory.
 
 ---
 
