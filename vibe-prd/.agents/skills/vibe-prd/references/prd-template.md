@@ -1324,4 +1324,115 @@ _Last synced with engineering: [Date]_
 
 ```
 
+---
+
+# Vibe PRD Template — Aesthetic & Experience First
+
+This template is for "vibe-driven" development—where the sensory experience, motion, and emotional impact take precedence over complex business logic. Use this when the goal is to build something that feels "alive" and "polished."
+
+---
+
+Use this exact structure in the generated .md file:
+
+```markdown
+# Vibe PRD: [Product Name]
+
+> **The Vibe:** [Three keywords that define the aesthetic, e.g., "Neon, Brutalist, Liquid"]
+> **Core Emotion:** [The primary feeling the user should have, e.g., "Empowered," "Zen," "Intrigued"]
+> **Status:** Visionary Draft
+
+---
+
+## 1. The Vision & The "Vibe"
+
+[2-3 paragraphs. Describe the world this product lives in. What does it look like? What does it feel like? Why does the world need this specific *feel* right now?]
+
+**The North Star Metric:** [One qualitative metric, e.g., "Percent of users who describe the UI as 'magical'"]
+
+---
+
+## 2. Visual Identity & Aesthetic
+
+### 2.1 Moodboard Concepts
+[Describe the visual direction: colors, typography, textures, lighting.]
+
+| Element | Direction | Reference/Inspiration |
+|---------|-----------|-----------------------|
+| Typography | [e.g., Mono-spaced for technical feel] | [Inspiration link/name] |
+| Color Palette | [e.g., Deep indigos with high-vis accents] | [Inspiration] |
+| Textures | [e.g., Glassmorphism, grainy gradients] | [Inspiration] |
+
+### 2.2 UI Philosophy
+[e.g., "Maximum whitespace, zero borders, focus on depth and layering."]
+
+---
+
+## 3. Motion & Interaction Design
+
+### 3.1 The "Physics" of the App
+[How do things move? Is it snappy? Elastic? Slow and heavy? Describe the spring constants and easing curves.]
+
+**Signature Transition:** [Describe one unique transition that defines the app's personality.]
+
+### 3.2 Micro-interactions
+[Small moments that delight.]
+
+- **Button Hover:** [e.g., "Slight expansion with a subtle glow and haptic 'click'"]
+- **Loading State:** [e.g., "A procedurally generated gradient that pulses with the user's heartbeat"]
+- **Success Feedback:** [e.g., "A shower of minimalist particles that drift off-screen"]
+
+---
+
+## 4. UX "Magic Moments"
+
+[Identify the 3 most critical moments where the user should feel 'wow'.]
+
+1. **[Moment 1]:** [Detailed description of the interaction and the expected emotional response.]
+2. **[Moment 2]:** [...]
+3. **[Moment 3]:** [...]
+
+---
+
+## 5. Sensory Details (Beyond Visuals)
+
+### 5.1 Audio Scape (The "Sound of the Vibe")
+[What does the app sound like? Ambient noise? UI sound effects? Silence?]
+
+### 5.2 Haptics (Physical Feedback)
+[How does the phone/trackpad vibrate? Sharp taps? Soft rumbles?]
+
+---
+
+## 6. Essential Functional Core (The "Skeleton")
+
+[Just enough functionality to support the vibe. Don't over-engineer.]
+
+- **[Feature A]:** [Minimal description]
+- **[Feature B]:** [Minimal description]
+
+---
+
+## 7. The Tech Stack (Vibe Optimized)
+
+| Layer | Choice | Rationale |
+|-------|--------|-----------|
+| **Animation Engine** | [e.g., Framer Motion / GSAP] | [Why this fits the physics] |
+| **Canvas/3D** | [e.g., Three.js / R3F] | [If applicable] |
+| **Frontend** | [e.g., Next.js + Tailwind] | [For rapid iteration] |
+
+---
+
+## 8. "Vibe Check" Checklist (Definition of Done)
+
+- [ ] Does it feel "alive" (nothing is static)?
+- [ ] Are the transitions seamless and intentional?
+- [ ] Is the aesthetic consistent across every edge case?
+- [ ] Does it pass the "Magic Moment" test?
+
+---
+
+_Created via Vibe PRD Spawnner_
+```
+
+
 ```
