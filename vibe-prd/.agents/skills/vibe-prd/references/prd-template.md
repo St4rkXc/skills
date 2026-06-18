@@ -1343,11 +1343,40 @@ Use this exact structure in the generated .md file:
 
 ---
 
+## Table of Contents
+
+1. [The Vision & The "Vibe"](#1-the-vision--the-vibe)
+2. [Visual Identity & Aesthetic](#2-visual-identity--aesthetic)
+3. [Typography System](#3-typography-system)
+4. [Color & Mood Palette](#4-color--mood-palette)
+5. [Spatial Design & Layout Philosophy](#5-spatial-design--layout-philosophy)
+6. [Motion & Interaction Design](#6-motion--interaction-design)
+7. [Iconography & Illustration Style](#7-iconography--illustration-style)
+8. [Photography & Imagery Direction](#8-photography--imagery-direction)
+9. [UX "Magic Moments"](#9-ux-magic-moments)
+10. [Brand Voice & Microcopy](#10-brand-voice--microcopy)
+11. [Sensory Details (Beyond Visuals)](#11-sensory-details-beyond-visuals)
+12. [Emotional User Journey Map](#12-emotional-user-journey-map)
+13. [Atmosphere & Environment Design](#13-atmosphere--environment-design)
+14. [Signature Interactions Catalog](#14-signature-interactions-catalog)
+15. [Vibe-Aligned Component Patterns](#15-vibe-aligned-component-patterns)
+16. [Essential Functional Core (The "Skeleton")](#16-essential-functional-core-the-skeleton)
+17. [The Tech Stack (Vibe Optimized)](#17-the-tech-stack-vibe-optimized)
+18. [Anti-Vibe Guardrails](#18-anti-vibe-guardrails)
+19. [Accessibility Without Compromise](#19-accessibility-without-compromise)
+20. [Vibe Testing Scenarios](#20-vibe-testing-scenarios)
+21. [Inspiration & Reference Board](#21-inspiration--reference-board)
+22. ["Vibe Check" Checklist (Definition of Done)](#22-vibe-check-checklist-definition-of-done)
+
+---
+
 ## 1. The Vision & The "Vibe"
 
 [2-3 paragraphs. Describe the world this product lives in. What does it look like? What does it feel like? Why does the world need this specific *feel* right now?]
 
 **The North Star Metric:** [One qualitative metric, e.g., "Percent of users who describe the UI as 'magical'"]
+
+**Product Mood Statement:** [One sentence that captures the essence — if this product were a place, what would it be?]
 
 ---
 
@@ -1361,78 +1390,508 @@ Use this exact structure in the generated .md file:
 | Typography | [e.g., Mono-spaced for technical feel] | [Inspiration link/name] |
 | Color Palette | [e.g., Deep indigos with high-vis accents] | [Inspiration] |
 | Textures | [e.g., Glassmorphism, grainy gradients] | [Inspiration] |
+| Lighting | [e.g., Soft ambient with sharp accent highlights] | [Inspiration] |
+| Overall Feel | [e.g., "Calm but alive"] | [Inspiration] |
 
 ### 2.2 UI Philosophy
 [e.g., "Maximum whitespace, zero borders, focus on depth and layering."]
 
+### 2.3 Visual Hierarchy Principles
+[What draws the eye first, second, third? How is importance communicated without relying on size alone?]
+
 ---
 
-## 3. Motion & Interaction Design
+## 3. Typography System
 
-### 3.1 The "Physics" of the App
+### 3.1 Font Pairings
+
+| Role | Font | Weight Range | Usage |
+|------|------|-------------|-------|
+| **Display / Headings** | [Font name] | [e.g., 400-800] | Hero text, section titles |
+| **Body** | [Font name] | [e.g., 400-500] | Paragraphs, descriptions |
+| **Mono / Code** | [Font name] | [e.g., 400] | Code blocks, data, timestamps |
+| **Accent** | [Font name, if any] | [e.g., 700 only] | CTAs, badges, special labels |
+
+### 3.2 Type Scale
+
+| Level | Size | Line Height | Letter Spacing | Used For |
+|-------|------|-------------|----------------|----------|
+| H1 | [e.g., 48px] | [e.g., 1.1] | [e.g., -0.02em] | Hero headlines |
+| H2 | [e.g., 32px] | [e.g., 1.2] | [e.g., -0.01em] | Section titles |
+| H3 | [e.g., 24px] | [e.g., 1.3] | [e.g., 0] | Card titles |
+| Body | [e.g., 16px] | [e.g., 1.6] | [e.g., 0] | Default text |
+| Small | [e.g., 14px] | [e.g., 1.5] | [e.g., 0] | Captions, hints |
+| Micro | [e.g., 12px] | [e.g., 1.4] | [e.g., 0.02em] | Labels, badges |
+
+### 3.3 Typography Personality
+[How does the typography contribute to the vibe? e.g., "Tight tracking on headings creates density and urgency; generous body line-height creates breathing room."]
+
+### 3.4 Variable Font Usage
+[If using variable fonts, which axes are animated and when? e.g., "Weight animates from 400→600 on hover for interactive elements."]
+
+---
+
+## 4. Color & Mood Palette
+
+### 4.1 Core Palette
+
+| Token | Light Mode | Dark Mode | Mood Association |
+|-------|-----------|-----------|-----------------|
+| `--bg-primary` | [hex] | [hex] | [e.g., "Calm, open space"] |
+| `--bg-secondary` | [hex] | [hex] | [e.g., "Grounded, layered"] |
+| `--text-primary` | [hex] | [hex] | [e.g., "Sharp, readable"] |
+| `--text-secondary` | [hex] | [hex] | [e.g., "Subtle, whisper"] |
+| `--accent` | [hex] | [hex] | [e.g., "Energy, focus point"] |
+| `--accent-hover` | [hex] | [hex] | [e.g., "Amplified energy"] |
+| `--success` | [hex] | [hex] | [e.g., "Relief, completion"] |
+| `--warning` | [hex] | [hex] | [e.g., "Attention, not alarm"] |
+| `--error` | [hex] | [hex] | [e.g., "Stop, but gentle"] |
+
+### 4.2 Gradient Recipes
+[Define any signature gradients used across the product.]
+
+```css
+/* Example: Hero background gradient */
+--gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+/* Example: Accent glow */
+--gradient-glow: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%);
+```
+
+### 4.3 Dark Mode Philosophy
+[Is dark mode just an inversion, or a completely different mood? e.g., "Dark mode is not a darker version of light mode — it's a 'night shift' mode with warmer accents and deeper shadows."]
+
+### 4.4 Color Psychology Notes
+[Why these colors? What emotional response do they trigger? Reference color theory where relevant.]
+
+---
+
+## 5. Spatial Design & Layout Philosophy
+
+### 5.1 Whitespace Strategy
+[How is empty space used? e.g., "Whitespace is a first-class design element. Sections breathe with 80-120px vertical rhythm. Cards float with generous padding."]
+
+### 5.2 Grid System
+
+| Breakpoint | Columns | Gutter | Margin |
+|------------|---------|--------|--------|
+| Mobile (< 640px) | 4 | 16px | 20px |
+| Tablet (640-1024px) | 8 | 24px | 40px |
+| Desktop (1024-1440px) | 12 | 32px | 80px |
+| Wide (> 1440px) | 12 | 32px | Max 1200px centered |
+
+### 5.3 Density Philosophy
+[e.g., "Low density: one primary action per screen. No clutter. Each element earns its place."]
+
+### 5.4 Card & Container Treatments
+[How are content containers styled? Borders, shadows, glass effects, rounded corners, etc.]
+
+---
+
+## 6. Motion & Interaction Design
+
+### 6.1 The "Physics" of the App
 [How do things move? Is it snappy? Elastic? Slow and heavy? Describe the spring constants and easing curves.]
 
-**Signature Transition:** [Describe one unique transition that defines the app's personality.]
+**Default Easing Curve:** [e.g., `cubic-bezier(0.34, 1.56, 0.64, 1)` — springy but controlled]
 
-### 3.2 Micro-interactions
+**Duration Scale:**
+
+| Animation Type | Duration | Easing |
+|---------------|----------|--------|
+| Micro (hover, tap) | 150ms | ease-out |
+| Small (toggle, badge) | 200ms | ease-in-out |
+| Medium (card expand) | 300ms | spring |
+| Large (page transition) | 400ms | ease-in-out |
+| Hero (onboarding) | 600ms+ | custom curve |
+
+### 6.2 Signature Transition
+[Describe one unique transition that defines the app's personality. Include a diagram or detailed step-by-step.]
+
+### 6.3 Micro-interactions
 [Small moments that delight.]
 
 - **Button Hover:** [e.g., "Slight expansion with a subtle glow and haptic 'click'"]
 - **Loading State:** [e.g., "A procedurally generated gradient that pulses with the user's heartbeat"]
 - **Success Feedback:** [e.g., "A shower of minimalist particles that drift off-screen"]
+- **Scroll Reveal:** [e.g., "Elements fade up with staggered delay as they enter viewport"]
+- **Focus State:** [e.g., "A soft ring that pulses once, then settles"]
 
 ---
 
-## 4. UX "Magic Moments"
+## 7. Iconography & Illustration Style
 
-[Identify the 3 most critical moments where the user should feel 'wow'.]
+### 7.1 Icon System
 
-1. **[Moment 1]:** [Detailed description of the interaction and the expected emotional response.]
-2. **[Moment 2]:** [...]
-3. **[Moment 3]:** [...]
+| Property | Specification |
+|----------|--------------|
+| Style | [e.g., Outlined / Filled / Duotone / Hand-drawn] |
+| Stroke Weight | [e.g., 1.5px consistent] |
+| Corner Treatment | [e.g., Rounded caps and joins] |
+| Size Scale | 16px / 20px / 24px / 32px |
+| Library | [e.g., Lucide / Custom / Heroicons] |
+
+### 7.2 Illustration Direction
+[If the product uses illustrations: what style? Abstract? Geometric? Hand-drawn? 3D?]
+
+| Property | Specification |
+|----------|--------------|
+| Style | [e.g., Flat geometric with subtle gradients] |
+| Color Treatment | [e.g., Monochromatic with one accent color] |
+| Complexity | [e.g., Minimal — max 5 shapes per illustration] |
+| Animation | [e.g., Subtle parallax on scroll] |
 
 ---
 
-## 5. Sensory Details (Beyond Visuals)
+## 8. Photography & Imagery Direction
 
-### 5.1 Audio Scape (The "Sound of the Vibe")
+### 8.1 Photo Style
+[e.g., "Natural light, candid moments, warm tones. No stock-photo stiffness."]
+
+### 8.2 Image Treatment
+[Filters, overlays, or effects applied to all imagery for consistency.]
+
+| Property | Specification |
+|----------|--------------|
+| Aspect Ratio | [e.g., 16:9 for heroes, 4:3 for cards, 1:1 for avatars] |
+| Overlay | [e.g., 20% dark gradient from bottom for text legibility] |
+| Border Radius | [e.g., 12px on all images] |
+| Hover Effect | [e.g., Subtle zoom (1.05x) with brightness increase] |
+
+### 8.3 Imagery vs. Illustration Decision Tree
+[When to use a photo vs. an illustration vs. an icon. e.g., "Use photos for human stories, illustrations for abstract concepts, icons for navigation."]
+
+---
+
+## 9. UX "Magic Moments"
+
+[Identify the 3-5 most critical moments where the user should feel 'wow'.]
+
+### 9.1 Magic Moment 1: [Name]
+**Trigger:** [What action causes this moment]
+**Experience:** [Detailed description of what the user sees, hears, and feels]
+**Emotional Response:** [What the user should feel — "delighted," "surprised," "understood"]
+**Technical Implementation:** [Brief note on how this is achieved]
+
+### 9.2 Magic Moment 2: [Name]
+[Same structure as above]
+
+### 9.3 Magic Moment 3: [Name]
+[Same structure as above]
+
+---
+
+## 10. Brand Voice & Microcopy
+
+### 10.1 Tone of Voice
+
+| Dimension | Our Voice | Not Our Voice |
+|-----------|-----------|---------------|
+| Formality | [e.g., Casual but precise] | [e.g., Corporate jargon] |
+| Warmth | [e.g., Friendly, like a knowledgeable friend] | [e.g., Cold and robotic] |
+| Confidence | [e.g., Quietly confident] | [e.g., Overly enthusiastic] |
+| Humor | [e.g., Dry, subtle wit in empty states] | [e.g., Forced memes] |
+
+### 10.2 Microcopy Guidelines
+
+| Context | Pattern | Example |
+|---------|---------|---------|
+| **Button Labels** | [e.g., Action verb + object, lowercase] | "create project" not "Submit" |
+| **Error Messages** | [e.g., What happened + how to fix it, no blame] | "That email didn't work. Try another?" |
+| **Empty States** | [e.g., Encouraging + clear next step] | "Nothing here yet. Let's create your first item." |
+| **Loading States** | [e.g., Contextual, not generic] | "Building your dashboard..." not "Loading..." |
+| **Success States** | [e.g., Celebratory but brief] | "Done. Your project is live." |
+
+### 10.3 Forbidden Words & Phrases
+[List words that break the vibe. e.g., "synergy," "leverage," "seamless," "revolutionary"]
+
+---
+
+## 11. Sensory Details (Beyond Visuals)
+
+### 11.1 Audio Scape (The "Sound of the Vibe")
 [What does the app sound like? Ambient noise? UI sound effects? Silence?]
 
-### 5.2 Haptics (Physical Feedback)
+| Event | Sound | Volume | Source |
+|-------|-------|--------|--------|
+| Button click | [e.g., Soft tap] | Low | [Custom / Library] |
+| Success | [e.g., Gentle chime] | Medium | [Custom] |
+| Error | [e.g., Low thud, not jarring] | Low | [Custom] |
+| Notification | [e.g., Two-tone pulse] | Medium | [Custom] |
+
+### 11.2 Haptics (Physical Feedback)
 [How does the phone/trackpad vibrate? Sharp taps? Soft rumbles?]
+
+| Event | Haptic Pattern |
+|-------|---------------|
+| Button press | [e.g., Light tap (iOS: UIImpactFeedbackStyle.light)] |
+| Success | [e.g., Double tap with slight delay] |
+| Error | [e.g., Single heavy thud] |
+| Scroll boundary | [e.g., Soft resistance at end of list] |
+
+### 11.3 Ambient Elements
+[Background elements that create atmosphere: subtle particle systems, gradient shifts, ambient animations that respond to time of day, etc.]
 
 ---
 
-## 6. Essential Functional Core (The "Skeleton")
+## 12. Emotional User Journey Map
+
+[Map how the user's emotional state should evolve across key flows.]
+
+### 12.1 Onboarding Flow
+
+| Step | User Action | Intended Emotion | How We Create It |
+|------|------------|-----------------|-----------------|
+| 1 | Lands on page | Curiosity | [e.g., Animated hero with subtle movement] |
+| 2 | First interaction | Delight | [e.g., Satisfying micro-interaction on first click] |
+| 3 | Setup complete | Accomplishment | [e.g., Celebration animation, clear "you're ready" state] |
+
+### 12.2 Core Task Flow
+[Same structure for the primary user task]
+
+### 12.3 Return Visit Flow
+[How does the experience feel for a returning user? e.g., "Familiar warmth, personalized greeting, no friction"]
+
+---
+
+## 13. Atmosphere & Environment Design
+
+### 13.1 The "World" of the Product
+[Describe the metaphorical or literal environment the product inhabits. e.g., "A quiet studio at golden hour — warm light, clean surfaces, everything has its place."]
+
+### 13.2 Background Treatments
+
+| Context | Treatment |
+|---------|-----------|
+| Landing page | [e.g., Animated gradient mesh with slow drift] |
+| Dashboard | [e.g., Clean white/off-white with subtle grid pattern] |
+| Settings | [e.g., Neutral, distraction-free] |
+| Error pages | [e.g., Muted palette with one warm accent] |
+
+### 13.3 Thematic Consistency Rules
+[Rules that ensure the atmosphere stays consistent. e.g., "No pure white (#FFF) anywhere — always slightly warm (#FAFAF9). No harsh shadows — only soft, diffused elevation."]
+
+---
+
+## 14. Signature Interactions Catalog
+
+[Document 5-10 specific interactions with exact animation/physics specs.]
+
+### 14.1 [Interaction Name]
+- **Trigger:** [e.g., User clicks "Add to Cart"]
+- **Animation:** [e.g., Button compresses to 95%, then expands to 105%, item icon flies to cart icon in top-right"]
+- **Duration:** [e.g., 400ms total]
+- **Easing:** [e.g., Spring for compress, ease-out for fly]
+- **Sound:** [e.g., Soft "pop" at compression peak]
+- **Haptic:** [e.g., Light tap at compression]
+
+### 14.2 [Interaction Name]
+[Same structure]
+
+### 14.3+ Additional Interactions
+[Continue for all signature interactions]
+
+---
+
+## 15. Vibe-Aligned Component Patterns
+
+[Define how key UI components should look and behave to reinforce the aesthetic.]
+
+### 15.1 Buttons
+
+| Variant | Style | Hover | Active |
+|---------|-------|-------|--------|
+| Primary | [e.g., Filled accent, 8px radius] | [e.g., 4% lighter, subtle shadow] | [e.g., 95% scale, darker] |
+| Secondary | [e.g., Outlined, transparent fill] | [e.g., 10% accent tint background] | [e.g., 95% scale] |
+| Ghost | [e.g., Text only, no border] | [e.g., Subtle underline + color shift] | [e.g., Color deepens] |
+
+### 15.2 Cards
+
+| Property | Specification |
+|----------|--------------|
+| Background | [e.g., White with 1% tint] |
+| Border | [e.g., None — shadow only] |
+| Shadow | [e.g., 0 2px 8px rgba(0,0,0,0.08)] |
+| Hover Shadow | [e.g., 0 8px 24px rgba(0,0,0,0.12)] |
+| Radius | [e.g., 12px] |
+| Hover Transform | [e.g., translateY(-2px)] |
+
+### 15.3 Modals / Dialogs
+
+| Property | Specification |
+|----------|--------------|
+| Backdrop | [e.g., 40% dark blur (backdrop-filter: blur(8px))] |
+| Entrance | [e.g., Scale 0.95→1.0 + fade in, 200ms] |
+| Exit | [e.g., Scale 1.0→0.95 + fade out, 150ms] |
+| Position | [e.g., Centered, max-width 480px] |
+
+### 15.4 Toasts / Notifications
+
+| Property | Specification |
+|----------|--------------|
+| Position | [e.g., Top-right, stacked] |
+| Entrance | [e.g., Slide in from right + fade] |
+| Duration | [e.g., 4s auto-dismiss, swipe to dismiss] |
+| Style | [e.g., Minimal — icon + text, no border] |
+
+---
+
+## 16. Essential Functional Core (The "Skeleton")
 
 [Just enough functionality to support the vibe. Don't over-engineer.]
 
-- **[Feature A]:** [Minimal description]
+### 16.1 Must-Have Features
+- **[Feature A]:** [Minimal description — what it does and why it's essential to the vibe]
 - **[Feature B]:** [Minimal description]
+
+### 16.2 Nice-to-Have (If Time Allows)
+- **[Feature C]:** [Description]
+
+### 16.3 Explicitly Out of Scope
+- [What we're NOT building — features that would dilute the vibe or over-complicate]
 
 ---
 
-## 7. The Tech Stack (Vibe Optimized)
+## 17. The Tech Stack (Vibe Optimized)
 
 | Layer | Choice | Rationale |
 |-------|--------|-----------|
-| **Animation Engine** | [e.g., Framer Motion / GSAP] | [Why this fits the physics] |
-| **Canvas/3D** | [e.g., Three.js / R3F] | [If applicable] |
+| **Animation Engine** | [e.g., Framer Motion / GSAP / Motion One] | [Why this fits the physics] |
+| **Canvas/3D** | [e.g., Three.js / R3F / Spline] | [If applicable] |
 | **Frontend** | [e.g., Next.js + Tailwind] | [For rapid iteration] |
+| **CSS Framework** | [e.g., Tailwind with custom config] | [Design token control] |
+| **Font Loading** | [e.g., next/font / self-hosted] | [Zero layout shift] |
+| **Image Optimization** | [e.g., next/image + AVIF] | [Fast, crisp visuals] |
+| **State Management** | [e.g., Zustand / Jotai] | [Minimal boilerplate] |
 
 ---
 
-## 8. "Vibe Check" Checklist (Definition of Done)
+## 18. Anti-Vibe Guardrails
 
+[Explicit list of what would break the vibe. These are patterns, colors, behaviors to NEVER use.]
+
+### 18.1 Visual Anti-Patterns
+- ❌ [e.g., "No pure black (#000) — always use #1a1a1a or softer"]
+- ❌ [e.g., "No harsh red (#FF0000) for errors — use muted coral"]
+- ❌ [e.g., "No default system fonts — always load our typeface"]
+- ❌ [e.g., "No box shadows on mobile — use borders instead"]
+
+### 18.2 Interaction Anti-Patterns
+- ❌ [e.g., "No instant transitions — everything must have easing"]
+- ❌ [e.g., "No loading spinners — use skeleton screens or progress indicators"]
+- ❌ [e.g., "No alert() or confirm() — always use custom dialogs"]
+- ❌ [e.g., "No page reloads — always SPA transitions"]
+
+### 18.3 Copy Anti-Patterns
+- ❌ [e.g., "Never say 'Error 404' — say 'This page wandered off'"]
+- ❌ [e.g., "Never use 'Submit' as a button label"]
+- ❌ [e.g., "Never blame the user in error messages"]
+
+---
+
+## 19. Accessibility Without Compromise
+
+[How to maintain WCAG compliance while preserving the aesthetic.]
+
+### 19.1 Color Contrast Strategy
+[How do we ensure readable text while keeping the mood? e.g., "All body text meets WCAG AA (4.5:1). Accent colors are decorative only — never carry meaning through color alone."]
+
+### 19.2 Motion Sensitivity
+[Respect `prefers-reduced-motion`. e.g., "When reduced motion is preferred: replace animations with instant state changes, keep layout transitions, disable parallax and ambient effects."]
+
+### 19.3 Focus Visibility
+[How focus states look while staying on-brand. e.g., "Focus ring uses accent color at 50% opacity with 2px offset — visible but not jarring."]
+
+### 19.4 Screen Reader Experience
+[How the product sounds to non-visual users. e.g., "All interactive elements have descriptive aria-labels. Loading states announce progress. The experience should feel equally polished."]
+
+### 19.5 Keyboard Navigation
+[Full keyboard support with on-brand focus indicators.]
+
+---
+
+## 20. Vibe Testing Scenarios
+
+[Specific user scenarios to validate the vibe holds up under real usage.]
+
+### 20.1 First Impression Test
+- **Scenario:** New user lands on the product for the first time
+- **Success Criteria:** User can articulate the vibe in 3 words within 10 seconds
+- **Validation Method:** [e.g., User testing session with open-ended feedback]
+
+### 20.2 Stress Test
+- **Scenario:** User encounters an error or edge case
+- **Success Criteria:** The error state still feels "on-brand" — not jarring or broken
+- **Validation Method:** [e.g., Trigger all error states and review with design team]
+
+### 20.3 Consistency Test
+- **Scenario:** User navigates across all major sections
+- **Success Criteria:** No section feels like it was designed by a different team
+- **Validation Method:** [e.g., Screenshot audit — lay out all screens side by side]
+
+### 20.4 Reduced Motion Test
+- **Scenario:** User has `prefers-reduced-motion` enabled
+- **Success Criteria:** The experience is still delightful, just quieter
+- **Validation Method:** [e.g., Enable reduced motion in dev tools and walk through core flows]
+
+---
+
+## 21. Inspiration & Reference Board
+
+[Collect and annotate visual references that inform the vibe.]
+
+### 21.1 Direct Inspirations
+| Source | What We're Taking | Why It Works |
+|--------|------------------|-------------|
+| [Product/Website] | [e.g., "The way cards elevate on hover"] | [e.g., "Creates depth without heaviness"] |
+| [Product/Website] | [e.g., "The loading animation"] | [e.g., "Makes waiting feel intentional"] |
+
+### 21.2 Anti-Inspirations (What to Avoid)
+| Source | What to Avoid | Why It Breaks Our Vibe |
+|--------|--------------|----------------------|
+| [Product/Website] | [e.g., "Dense information architecture"] | [e.g., "Too clinical, not enough breathing room"] |
+
+### 21.3 Cross-Domain Inspiration
+[Inspiration from outside digital products — architecture, fashion, film, nature, etc.]
+- [e.g., "Japanese tea ceremony — the ritual of preparation is as important as the result"]
+- [e.g., "Brutalist architecture — raw materials, honest structure"]
+
+---
+
+## 22. "Vibe Check" Checklist (Definition of Done)
+
+### Visual Consistency
+- [ ] Does every screen feel like it belongs to the same product?
+- [ ] Are all colors from the defined palette (no rogue hex codes)?
+- [ ] Is typography consistent with the type scale?
+- [ ] Do all images follow the treatment guidelines?
+
+### Motion & Interaction
 - [ ] Does it feel "alive" (nothing is static)?
-- [ ] Are the transitions seamless and intentional?
-- [ ] Is the aesthetic consistent across every edge case?
+- [ ] Are all transitions using the defined easing curves?
+- [ ] Are micro-interactions present on all interactive elements?
+- [ ] Does `prefers-reduced-motion` work correctly?
+
+### Emotional Impact
 - [ ] Does it pass the "Magic Moment" test?
+- [ ] Would a first-time user describe the vibe in the target keywords?
+- [ ] Do error states maintain the brand voice?
+- [ ] Is the empty state delightful, not depressing?
+
+### Technical Quality
+- [ ] Zero layout shift on font load
+- [ ] All animations run at 60fps (no jank)
+- [ ] WCAG AA contrast ratios met
+- [ ] All interactive elements keyboard accessible
+- [ ] Screen reader experience is coherent
+
+### Guardrail Compliance
+- [ ] No anti-vibe patterns slipped in
+- [ ] No forbidden words in microcopy
+- [ ] No default browser styles visible
+- [ ] No generic loading spinners
 
 ---
 
 _Created via Vibe PRD Spawnner_
-```
-
-
 ```
