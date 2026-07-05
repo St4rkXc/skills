@@ -6,6 +6,7 @@ This is my personal repository for developing, organizing, and managing AI agent
 
 - `hybrid-plan/`: Contains skills and planning documentation for enforcing a strict, two-phase development discipline: **ARCHITECT** (planning) and **BUILDER** (execution). Use this for feature implementation, refactoring, and migrations.
 - `prd-spawnner/`: Contains skills and reference materials (templates, tech stacks) for generating comprehensive, professional Product Requirement Documents (PRDs). Use this for product ideation and initial requirements definition.
+- `test-strategy/`: Contains skills and reference materials for generating comprehensive, engineering-grade test strategy documents from a PRD, feature spec, or plain-English description. Use this for test planning before or during development.
 
 ## Key Files & Structures
 
@@ -13,6 +14,8 @@ This is my personal repository for developing, organizing, and managing AI agent
 - **`hybrid-plan/.agents/skills/hybrid-planning/SKILL.md`**: Definitive guide on the Architect/Builder workflow.
 - **`prd-spawnner/.agents/skills/prd-spawnner/SKILL.md`**: Definitive guide on the PRD generation workflow.
 - **`prd-spawnner/references/`**: Contains `prd-template.md` and `tech-stacks.md` used for PRD generation.
+- **`test-strategy/.agents/skills/test-strategy/SKILL.md`**: Definitive guide on the test strategy generation workflow.
+- **`test-strategy/references/`**: Contains `test-strategy-template.md` used for test strategy generation.
 
 ## Skill Development & Management
 
@@ -33,6 +36,7 @@ Use this repository to:
 1.  Manage project-specific plans using the Hybrid Planning skill.
 2.  Maintain technical debt logs via `_debt.md` in active plan directories.
 3.  Store and refine PRD templates and technology reference materials.
-4.  Develop and experiment with new agent-based development workflows.
+4.  Generate test strategies from PRDs or feature specs using the Test Strategy skill.
+5.  Develop and experiment with new agent-based development workflows.
 
 > **Note:** For new development tasks, always consult the respective `SKILL.md` files to ensure adherence to defined workflows and conventions.

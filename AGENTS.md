@@ -13,6 +13,7 @@ This is a markdown-only repo of AI agent skills for Gemini CLI. No code, no buil
 | `hybrid-plan/` | `hybrid-planning` | `/hybrid-plan` slash command |
 | `prd-spawnner/` | `prd-spawnner` | `/prd-spawnner` or PRD-related phrases |
 | `vibe-prd/` | `vibe-prd` | `/vibe-prd` or PRD-related phrases |
+| `test-strategy/` | `test-strategy` | `/test-strategy` or test planning phrases |
 
 ### Key conventions
 
