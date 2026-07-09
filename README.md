@@ -10,15 +10,17 @@ This repository is my personal lab for designing, testing, and refining custom A
 | :---------------- | :------ | :------------------------------------------------------------------------------- |
 | `hybrid-planning` | 1.1.0   | Enforces a strict, two-phase ARCHITECT/BUILDER workflow.                         |
 | `prd-spawnner`    | 1.0.0   | Automates professional PRD generation via structured interviews.                 |
-| `vibe-prd`        | 1.0.3   | Vibe-Coded-Ready-PRD generator with an interview process. |
+| `vibe-prd`        | 1.0.3   | Vibe-Coded-Ready-PRD generator with an interview process.                        |
+| `test-strategy`   | 1.0.0   | Generates comprehensive, engineering-grade test strategy documents.              |
 
 ## What's Inside
 
-This repo acts as the home for my experimental workflows:
+This repo acts as the home for my experimental workflows under the `code/` folder:
 
-- **`hybrid-plan/`**: Implementation of a strict, two-phase development discipline. It forces a clear separation between **ARCHITECT** (theory/planning) and **BUILDER** (code execution).
-- **`prd-spawnner/`**: A toolset designed to solve the "blank page problem" by automating the generation of professional PRDs.
-- **`vibe-prd/`**: A refined version of PRD generation with an English-first approach and outputs saved to `plan/prd/`.
+- **`code/hybrid-planning/`**: Implementation of a strict, two-phase development discipline. It forces a clear separation between **ARCHITECT** (theory/planning) and **BUILDER** (code execution).
+- **`code/prd-spawnner/`**: A toolset designed to solve the "blank page problem" by automating the generation of professional PRDs.
+- **`code/vibe-prd/`**: A refined version of PRD generation with an English-first approach and outputs saved to `plan/prd/`.
+- **`code/test-strategy/`**: A toolset for generating comprehensive, engineering-grade test strategy documents from a PRD or feature spec.
 
 ## Why I Built This
 
