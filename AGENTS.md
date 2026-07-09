@@ -14,6 +14,7 @@ This is a markdown-only repo of AI agent skills for Gemini CLI. No code, no buil
 | `code/prd-spawnner/` | `prd-spawnner` | `/prd-spawnner` or PRD-related phrases |
 | `code/vibe-prd/` | `vibe-prd` | `/vibe-prd` or PRD-related phrases |
 | `code/test-strategy/` | `test-strategy` | `/test-strategy` or test planning phrases |
+| `code/code-reviewer/` | `code-reviewer` | `/review` or code review phrases |
 
 ### Key conventions
 

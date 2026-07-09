@@ -8,6 +8,7 @@ This is my personal repository for developing, organizing, and managing AI agent
 - `code/prd-spawnner/`: Contains skills and reference materials (templates, tech stacks) for generating comprehensive, professional Product Requirement Documents (PRDs). Use this for product ideation and initial requirements definition.
 - `code/vibe-prd/`: A refined version of PRD generation with an English-first approach and outputs saved to `plan/prd/`.
 - `code/test-strategy/`: Contains skills and reference materials for generating comprehensive, engineering-grade test strategy documents from a PRD, feature spec, or plain-English description. Use this for test planning before or during development.
+- `code/code-reviewer/`: Contains the skill and checklist template for performing structured, opinionated code reviews with severity tagging and a verdict system.
 
 ## Key Files & Structures
 
@@ -19,6 +20,8 @@ This is my personal repository for developing, organizing, and managing AI agent
 - **`code/vibe-prd/references/`**: Contains `prd-template.md` and `tech-stacks.md` used for vibe-prd generation.
 - **`code/test-strategy/SKILL.md`**: Definitive guide on the test strategy generation workflow.
 - **`code/test-strategy/references/`**: Contains `test-strategy-template.md` used for test strategy generation.
+- **`code/code-reviewer/SKILL.md`**: Definitive guide on the code review workflow.
+- **`code/code-reviewer/references/`**: Contains `code-review-checklist.md` used for code review checklist guidelines.
 
 ## Skill Development & Management
 

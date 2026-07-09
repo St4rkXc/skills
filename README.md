@@ -12,6 +12,7 @@ This repository is my personal lab for designing, testing, and refining custom A
 | `prd-spawnner`    | 1.0.0   | Automates professional PRD generation via structured interviews.                 |
 | `vibe-prd`        | 1.0.3   | Vibe-Coded-Ready-PRD generator with an interview process.                        |
 | `test-strategy`   | 1.0.0   | Generates comprehensive, engineering-grade test strategy documents.              |
+| `code-reviewer`   | 1.0.0   | Structured, severity-tagged code reviews with APPROVE/REQUEST CHANGES verdicts.  |
 
 ## What's Inside
 
@@ -21,6 +22,7 @@ This repo acts as the home for my experimental workflows under the `code/` folde
 - **`code/prd-spawnner/`**: A toolset designed to solve the "blank page problem" by automating the generation of professional PRDs.
 - **`code/vibe-prd/`**: A refined version of PRD generation with an English-first approach and outputs saved to `plan/prd/`.
 - **`code/test-strategy/`**: A toolset for generating comprehensive, engineering-grade test strategy documents from a PRD or feature spec.
+- **`code/code-reviewer/`**: A structured code review skill that interviews for context, applies an opinionated checklist, and delivers severity-tagged findings with a clear verdict.
 
 ## Why I Built This
 
