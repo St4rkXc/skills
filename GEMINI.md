@@ -5,7 +5,9 @@ This is my personal repository for developing, organizing, and managing AI agent
 ## Directory Overview
 
 - `code/hybrid-planning/`: Contains skills and planning documentation for enforcing a strict, two-phase development discipline: **ARCHITECT** (planning) and **BUILDER** (execution). Use this for feature implementation, refactoring, and migrations.
-- `code/prd-spawnner/`: Contains skills and reference materials (templates, tech stacks) for generating comprehensive, professional Product Requirement Documents (PRDs). Use this for product ideation and initial requirements definition.
+- `product-management/prd-spawnner/`: Contains skills and reference materials (templates, tech stacks) for generating comprehensive, professional Product Requirement Documents (PRDs). Use this for product ideation and initial requirements definition.
+- `product-management/prd-generator/`: Contains skills and reference materials for generating or dynamically improving/continuing advanced PRDs.
+- `product-management/sprint-planner/`: Contains skills and templates to automatically create role-based sprint plan breakdowns from a PRD.
 - `code/vibe-prd/`: A refined version of PRD generation with an English-first approach and outputs saved to `plan/prd/`.
 - `code/test-strategy/`: Contains skills and reference materials for generating comprehensive, engineering-grade test strategy documents from a PRD, feature spec, or plain-English description. Use this for test planning before or during development.
 - `code/code-reviewer/`: Contains the skill and checklist template for performing structured, opinionated code reviews with severity tagging and a verdict system.
@@ -14,8 +16,12 @@ This is my personal repository for developing, organizing, and managing AI agent
 
 - **`code/hybrid-planning/.plan/`**: Storage for active feature plan documents and the `_debt.md` log.
 - **`code/hybrid-planning/SKILL.md`**: Definitive guide on the Architect/Builder workflow.
-- **`code/prd-spawnner/SKILL.md`**: Definitive guide on the PRD generation workflow.
-- **`code/prd-spawnner/references/`**: Contains `prd-template.md` and `tech-stacks.md` used for PRD generation.
+- **`product-management/prd-spawnner/SKILL.md`**: Definitive guide on the PRD generation workflow.
+- **`product-management/prd-spawnner/references/`**: Contains `prd-template.md` and `tech-stacks.md` used for PRD generation.
+- **`product-management/prd-generator/SKILL.md`**: Definitive guide on the advanced PRD generation and refinement workflow.
+- **`product-management/prd-generator/references/`**: Contains `prd-template.md` and `tech-stacks.md` used for advanced PRD generation/improvement.
+- **`product-management/sprint-planner/SKILL.md`**: Definitive guide on the sprint plan generation workflow.
+- **`product-management/sprint-planner/references/`**: Contains `sprint-plan-template.md` used for sprint planning.
 - **`code/vibe-prd/SKILL.md`**: Definitive guide on the vibe-prd workflow.
 - **`code/vibe-prd/references/`**: Contains `prd-template.md` and `tech-stacks.md` used for vibe-prd generation.
 - **`code/test-strategy/SKILL.md`**: Definitive guide on the test strategy generation workflow.

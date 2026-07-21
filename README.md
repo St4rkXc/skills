@@ -10,16 +10,20 @@ This repository is my personal lab for designing, testing, and refining custom A
 | :---------------- | :------ | :------------------------------------------------------------------------------- |
 | `hybrid-planning` | 1.1.0   | Enforces a strict, two-phase ARCHITECT/BUILDER workflow.                         |
 | `prd-spawnner`    | 1.0.0   | Automates professional PRD generation via structured interviews.                 |
+| `prd-generator`   | 1.0.0   | Advanced PRD generator supporting scratch & continuation workflows.            |
+| `sprint-planner`  | 1.0.0   | Generates role-based sprint plan breakdowns from an input PRD.                 |
 | `vibe-prd`        | 1.0.3   | Vibe-Coded-Ready-PRD generator with an interview process.                        |
 | `test-strategy`   | 1.0.0   | Generates comprehensive, engineering-grade test strategy documents.              |
 | `code-reviewer`   | 1.0.0   | Structured, severity-tagged code reviews with APPROVE/REQUEST CHANGES verdicts.  |
 
 ## What's Inside
 
-This repo acts as the home for my experimental workflows under the `code/` folder:
+This repo acts as the home for my experimental workflows under the `code/` and `product-management/` folders:
 
 - **`code/hybrid-planning/`**: Implementation of a strict, two-phase development discipline. It forces a clear separation between **ARCHITECT** (theory/planning) and **BUILDER** (code execution).
-- **`code/prd-spawnner/`**: A toolset designed to solve the "blank page problem" by automating the generation of professional PRDs.
+- **`product-management/prd-spawnner/`**: A toolset designed to solve the "blank page problem" by automating the generation of professional PRDs.
+- **`product-management/prd-generator/`**: An advanced PRD generator supporting greenfield creation, dynamic reference templates, and continuous improvement/refinement of existing PRDs.
+- **`product-management/sprint-planner/`**: A toolset that parses a PRD to construct organized, role-based sprint plans with milestone gates.
 - **`code/vibe-prd/`**: A refined version of PRD generation with an English-first approach and outputs saved to `plan/prd/`.
 - **`code/test-strategy/`**: A toolset for generating comprehensive, engineering-grade test strategy documents from a PRD or feature spec.
 - **`code/code-reviewer/`**: A structured code review skill that interviews for context, applies an opinionated checklist, and delivers severity-tagged findings with a clear verdict.
