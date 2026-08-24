@@ -1,15 +1,15 @@
 ---
 name: prd-generator
-description: Generate or improve comprehensive, professional, engineering-grade Product Requirements Documents (PRDs) from scratch or by continuing/refining an existing PRD. Triggers when the user runs /prd-generator or uses phrases like "buat PRD advanced", "benerin PRD", "lanjutkan PRD", "generate advanced PRD", "improve PRD", or "advanced product requirements document". Outputs a deeply detailed English-language PRD (minimum 800 lines) with a Table of Contents and Mermaid diagrams.
+description: Generate or improve comprehensive, professional, human-readable and management-focused Product Requirements Documents (PRDs) from scratch or by continuing/refining an existing PRD. Triggers when the user runs /prd-generator or uses phrases like "buat PRD advanced", "benerin PRD", "lanjutkan PRD", "generate advanced PRD", "improve PRD", or "advanced product requirements document". Outputs a deeply detailed English-language PRD (minimum 800 lines) with a Table of Contents.
 ---
 
-# Advanced PRD Generator
+# Advanced PRD Generator (Management & UX Focus)
 
-An advanced skill designed to produce or refine deeply professional, engineering-grade Product Requirements Documents (PRDs). The PRD acts as the single source of truth and north star for a project. Getting it right eliminates ambiguity, prevents scope creep, and establishes clear contracts before any code is written.
+An advanced skill designed to produce or refine deeply professional, human-centric, and management-focused Product Requirements Documents (PRDs). The PRD acts as the single source of truth and product alignment roadmap for all team members (clients, designers, product managers, and developers). Getting it right eliminates business alignment errors, clarifies design scope, and details user journeys before execution begins.
 
 ## Why this matters
 
-A mediocre PRD leads to architectural dead ends, misaligned expectations, and technical debt. This tool elevates the PRD to principal-engineer and lead-PM standards. By supporting **both from-scratch creation and continuous refinement/repair**, it allows PRDs to evolve dynamically alongside the product rather than remaining static drafts.
+A vague or incomplete PRD leads to misaligned client expectations, poor user experience direction, and timeline inflation. This tool raises the PRD to the standards of principal product managers and design leads. By supporting **both greenfield creation and ongoing refinement/repair**, it allows PRDs to adapt to feedback while remaining focused on user value and business outcomes.
 
 ## Triggers
 
@@ -19,7 +19,7 @@ Activate this skill when:
   - "buat PRD advanced", "benerin PRD", "lanjutkan PRD"
   - "generate advanced PRD", "improve existing PRD", "continue this PRD"
   - "advanced product requirements document", "help me refine my PRD"
-  - "planning a complex app/system"
+  - "planning a new product or application"
 
 ---
 
@@ -39,12 +39,11 @@ If starting from scratch, skip to **Phase 1: Dynamic Interview**.
 ### B. Continuation & Refinement (Existing PRD)
 If the user wants to continue or improve an existing PRD:
 1. **Analyze the existing PRD**: Read the file carefully. Identify:
-   - **Gaps**: What is missing? (e.g., missing API definitions, incomplete database schema details, handoff specs, empty sections).
-   - **Ambiguities**: What needs tighter specification? (e.g., generic performance statements like "the app should be fast" instead of P95 response times; weak security definitions).
-   - **Inconsistencies**: Are there contradictions between features and architectural choices?
-   - **Visuals**: Are there missing or outdated Mermaid diagrams?
+   - **Gaps**: What is missing? (e.g., missing user flows, undefined personas, empty page structures, incomplete functional requirements, or missing visual asset checklists).
+   - **Ambiguities**: What needs tighter definition? (e.g., vague statements like "the site must be accessible" instead of specifying compliance targets like WCAG 2.1 AA; generic KPIs).
+   - **Inconsistencies**: Are there contradictions between business goals and the proposed features/layout?
 2. **Present the Analysis & Action Plan**: Show the user a brief, bulleted analysis of the current PRD's state and an "Action Plan" of what you propose to add, fix, or expand.
-3. **Formulate tailored transition prompts**: E.g. *"I noticed the current database schema doesn't specify relations for X. I'll add that in. I also noticed the API contracts are missing error response models. I'll document those."*
+3. **Formulate tailored transition prompts**: E.g. *"I noticed the user personas are missing demographics and pain points. I'll define those. I also noticed the visual design guidelines lack a grid system and typography scale. I'll outline those details."*
 
 ---
 
@@ -76,25 +75,25 @@ Based on the project type and current state, present a grouped set of questions 
 - What are the absolute MUST-have features for this version?
 - What are the out-of-scope or nice-to-have items?
 
-#### 3. ⚙️ Technology & Integration
-- What is your preferred tech stack? (If unsure, write "recommend" and I will consult `references/tech-stacks.md` to suggest one).
-- What third-party APIs or integrations are required? (e.g., payments, auth, maps, AI/LLMs).
+#### 3. 🖥️ Platform & Integrations
+- What target platforms or environments are we deploying to? (e.g. responsive web, iOS, Android).
+- What third-party service connections or CMS platforms are desired? (e.g. Stripe for payments, Sanity/WordPress for content management).
 
-#### 4. 📈 Scale & Performance Requirements
-- What are the target metrics? (e.g., expected page load time, concurrent users, service uptime, API latency targets).
-- Are there specific compliance rules (e.g., GDPR, HIPAA, local privacy laws)?
+#### 4. 📈 Business Goals & KPIs
+- What are the target user demographics and business success metrics?
+- Are there specific compliance rules (e.g., GDPR, local privacy laws, accessibility standards)?
 
 ### Handling Incomplete or Missing Answers
 If the user skips questions, apply the following senior fallbacks:
-- **Tech Stack**: Choose the optimal stack from [references/tech-stacks.md](file:///C:/Users/Jarvis/Documents/GitHub/Skills%20Playground/product-management/prd-generator/references/tech-stacks.md) matching their product type.
-- **Scale**: Assume a standard MVP launch baseline (e.g., 1K MAU, P95 latency < 300ms).
-- **Compliance**: Default to standard secure practices (OWASP Top 10, JWT auth, HTTPS) and state assumptions explicitly under a dedicated "Assumptions & Constraints" section.
+- **Scope & Platform**: Assume web-first, mobile-responsive layout.
+- **KPIs**: Propose standard UX goals (e.g. increase task completion rate, reduce user friction in core flows).
+- **Assumptions**: Clearly document all baseline assumptions in a dedicated "Assumptions & Constraints" section.
 
 ### Confirmation
 Summarize your findings and action plan in a clean bulleted list, then ask:
 ```
 Here is my plan for the advanced PRD:
-[Bullet points of key features, architecture choice, and gaps to resolve]
+[Bullet points of key features, design approach, and gaps to resolve]
 
 I'm ready to generate the PRD now. Does anything need to be adjusted first?
 ```
@@ -114,16 +113,11 @@ Generate the PRD as a single, comprehensive markdown file saved to `plan/prd/[pr
 2. **Language**:
    - The entire document must be written in **English**.
 3. **Thoroughness & Detail (Minimum 800+ lines)**:
-   - Provide concrete, engineering-grade details. Avoid placeholders, "TBD", or vague statements.
-   - Specify real API contracts (JSON format/REST endpoints), real database schema columns, real performance latency requirements (e.g., *p95 < 250ms under 200 RPS*), and real security controls.
-4. **Mermaid Diagrams**:
-   Include at least **four** functional, valid Mermaid diagrams:
-   - **System Architecture Diagram**: Showing components (Frontend, Gateway, Backend, DB, Cache, External Services).
-   - **Entity Relationship Diagram (ERD)**: Core data entities, fields, data types, and relationships.
-   - **Core User Flow**: Flowchart of the primary user journey (happy path + primary error handling path).
-   - **API Request Lifecycle / Info Architecture**: A sequence flowchart or tree diagram showing how data flows or how pages are structured.
-5. **Dynamic Template Adaptation**:
-   - Do not mindlessly copy a template. Combine or adapt the structural elements of [references/prd-template.md](file:///C:/Users/Jarvis/Documents/GitHub/Skills%20Playground/product-management/prd-generator/references/prd-template.md) dynamically to fit the project's real constraints.
+   - Provide concrete, non-technical, human-readable specifications. Avoid placeholders, "TBD", or vague statements.
+   - Focus on business goals, user personas, screen inventories, Visual Design guidelines (spacing, typography scale, neutral color palettes), functional requirements (user roles and CMS structures), browser/device compatibilities, accessibility checklists (alt-text rules, touch target guidelines), timelines, and RACI matrices.
+   - **Strict Rule: NO code blocks, database scripts, technical deployment instructions, or Mermaid diagrams.**
+4. **Dynamic Template Adaptation**:
+   - Do not mindlessly copy a template. Combine or adapt the structural elements of [references/prd-template.md](file:///C:/Users/Jarvis/Documents/GitHub/Skills%20Playground/product-management/prd-generator/references/prd-template.md) dynamically to fit the project's real business and design constraints.
 
 ---
 
@@ -132,13 +126,12 @@ Generate the PRD as a single, comprehensive markdown file saved to `plan/prd/[pr
 Once the file is generated, call the file presentation tools to display it.
 In your final chat message, present:
 - A brief description of the generated/improved PRD.
-- A highlight of **three major architectural decisions** made.
-- The **top technical or product risk** identified and how it's addressed.
-- Next steps (e.g., moving to test planning or architectural prototyping).
+- A highlight of **three major design/product decisions** made.
+- The **top business or user experience risk** identified and how it's addressed.
+- Next steps (e.g., moving to sprint planning or wireframing).
 
 ---
 
 ## References
 
 - [references/prd-template.md](file:///C:/Users/Jarvis/Documents/GitHub/Skills%20Playground/product-management/prd-generator/references/prd-template.md) — The reference template variations (UX Research, Mobile UI/UX, Web Dev, Web UI Design).
-- [references/tech-stacks.md](file:///C:/Users/Jarvis/Documents/GitHub/Skills%20Playground/product-management/prd-generator/references/tech-stacks.md) — Tech stack recommendations categorized by product type.

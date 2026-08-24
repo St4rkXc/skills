@@ -8,9 +8,11 @@ This is my personal repository for developing, organizing, and managing AI agent
 - `product-management/prd-spawnner/`: Contains skills and reference materials (templates, tech stacks) for generating comprehensive, professional Product Requirement Documents (PRDs). Use this for product ideation and initial requirements definition.
 - `product-management/prd-generator/`: Contains skills and reference materials for generating or dynamically improving/continuing advanced PRDs.
 - `product-management/sprint-planner/`: Contains skills and templates to automatically create role-based sprint plan breakdowns from a PRD.
+- `product-management/synthesize/`: Contains skills for synthesizing user research data into structured findings.
 - `code/vibe-prd/`: A refined version of PRD generation with an English-first approach and outputs saved to `plan/prd/`.
 - `code/test-strategy/`: Contains skills and reference materials for generating comprehensive, engineering-grade test strategy documents from a PRD, feature spec, or plain-English description. Use this for test planning before or during development.
 - `code/code-reviewer/`: Contains the skill and checklist template for performing structured, opinionated code reviews with severity tagging and a verdict system.
+- `code/codebase-documenter/`: Contains the skill and reference templates for enterprise-grade codebase documentation. Generates language-idiomatic inline docblocks (JSDoc, TSDoc, phpDoc, PEP257, Javadoc, godoc, XML doc, rustdoc, YARD, Swift Markup, KDoc, dartdoc) and project-level docs (README, API reference, architecture overview, CHANGELOG) with Mermaid/PlantUML diagrams.
 
 ## Key Files & Structures
 
@@ -19,15 +21,18 @@ This is my personal repository for developing, organizing, and managing AI agent
 - **`product-management/prd-spawnner/SKILL.md`**: Definitive guide on the PRD generation workflow.
 - **`product-management/prd-spawnner/references/`**: Contains `prd-template.md` and `tech-stacks.md` used for PRD generation.
 - **`product-management/prd-generator/SKILL.md`**: Definitive guide on the advanced PRD generation and refinement workflow.
-- **`product-management/prd-generator/references/`**: Contains `prd-template.md` and `tech-stacks.md` used for advanced PRD generation/improvement.
+- **`product-management/prd-generator/references/`**: Contains `prd-template.md` used for advanced PRD generation/improvement.
 - **`product-management/sprint-planner/SKILL.md`**: Definitive guide on the sprint plan generation workflow.
 - **`product-management/sprint-planner/references/`**: Contains `sprint-plan-template.md` used for sprint planning.
+- **`product-management/synthesize/SKILL.md`**: Definitive guide on the user research synthesis workflow.
 - **`code/vibe-prd/SKILL.md`**: Definitive guide on the vibe-prd workflow.
 - **`code/vibe-prd/references/`**: Contains `prd-template.md` and `tech-stacks.md` used for vibe-prd generation.
 - **`code/test-strategy/SKILL.md`**: Definitive guide on the test strategy generation workflow.
 - **`code/test-strategy/references/`**: Contains `test-strategy-template.md` used for test strategy generation.
 - **`code/code-reviewer/SKILL.md`**: Definitive guide on the code review workflow.
 - **`code/code-reviewer/references/`**: Contains `code-review-checklist.md` used for code review checklist guidelines.
+- **`code/codebase-documenter/SKILL.md`**: Definitive guide on the codebase documentation workflow.
+- **`code/codebase-documenter/references/`**: Contains `docblock-standards.md` (inline docblock specs per language) and `project-docs-template.md` (README, API ref, architecture, CHANGELOG templates).
 
 ## Skill Development & Management
 
@@ -49,6 +54,7 @@ Use this repository to:
 2.  Maintain technical debt logs via `_debt.md` in active plan directories.
 3.  Store and refine PRD templates and technology reference materials.
 4.  Generate test strategies from PRDs or feature specs using the Test Strategy skill.
-5.  Develop and experiment with new agent-based development workflows.
+5.  Generate enterprise-grade codebase documentation (inline docblocks + project-level docs) using the Codebase Documenter skill.
+6.  Develop and experiment with new agent-based development workflows.
 
 > **Note:** For new development tasks, always consult the respective `SKILL.md` files to ensure adherence to defined workflows and conventions.
