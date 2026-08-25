@@ -38,13 +38,13 @@ Install skills using [skills.sh](https://skills.sh/):
 
 ```bash
 # Install a specific skill
-npx skills.sh add <github-username>/Skills\ Playground@<skill-name>
+npx skills add <github-username>/Skills\ Playground@<skill-name>
 
 # Example: Install codebase-documenter
-npx skills.sh add <github-username>/Skills\ Playground@codebase-documenter
+npx skills add <github-username>/Skills\ Playground@codebase-documenter
 
 # Example: Install code-reviewer
-npx skills.sh add <github-username>/Skills\ Playground@code-reviewer
+npx skills add <github-username>/Skills\ Playground@code-reviewer
 ```
 
 Replace `<github-username>` with your GitHub username.
