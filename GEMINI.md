@@ -21,7 +21,7 @@ This is my personal repository for developing, organizing, and managing AI agent
 - **`product-management/prd-spawnner/SKILL.md`**: Definitive guide on the PRD generation workflow.
 - **`product-management/prd-spawnner/references/`**: Contains `prd-template.md` and `tech-stacks.md` used for PRD generation.
 - **`product-management/prd-generator/SKILL.md`**: Definitive guide on the advanced PRD generation and refinement workflow.
-- **`product-management/prd-generator/references/`**: Contains `prd-template.md` used for advanced PRD generation/improvement.
+- **`product-management/prd-generator/references/`**: Contains `ux-research-prd.md`, `mobile-uiux-prd.md`, `website-dev-prd.md`, and `website-ui-design-prd.md` used for advanced PRD generation/improvement.
 - **`product-management/sprint-planner/SKILL.md`**: Definitive guide on the sprint plan generation workflow.
 - **`product-management/sprint-planner/references/`**: Contains `sprint-plan-template.md` used for sprint planning.
 - **`product-management/synthesize/SKILL.md`**: Definitive guide on the user research synthesis workflow.

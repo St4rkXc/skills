@@ -69,7 +69,7 @@ Based on the project type and current state, present a grouped set of questions 
   - **Mobile App UI/UX Design PRD** (focuses on mobile platforms, visual design, and screen inventory)
   - **Website Development PRD** (focuses on full-stack web, CMS, SEO, and functional requirements)
   - **Website UI Design PRD** (focuses on web visual design, design systems, and page sections)
-  - *Note:* The template in `references/prd-template.md` serves as a reference guide. I will dynamically adapt the structure based on your product needs.
+  - *Note:* The templates in `references/` serve as a reference guide. I will dynamically adapt the structure based on your product needs.
 
 #### 2. 🎯 Core Features & Scope
 - What are the absolute MUST-have features for this version?
@@ -117,7 +117,64 @@ Generate the PRD as a single, comprehensive markdown file saved to `plan/prd/[pr
    - Focus on business goals, user personas, screen inventories, Visual Design guidelines (spacing, typography scale, neutral color palettes), functional requirements (user roles and CMS structures), browser/device compatibilities, accessibility checklists (alt-text rules, touch target guidelines), timelines, and RACI matrices.
    - **Strict Rule: NO code blocks, database scripts, technical deployment instructions, or Mermaid diagrams.**
 4. **Dynamic Template Adaptation**:
-   - Do not mindlessly copy a template. Combine or adapt the structural elements of [references/prd-template.md](file:///C:/Users/Jarvis/Documents/GitHub/Skills%20Playground/product-management/prd-generator/references/prd-template.md) dynamically to fit the project's real business and design constraints.
+   - Do not mindlessly copy a template. Combine or adapt the structural elements of the selected reference template dynamically to fit the project's real business and design constraints.
+
+### Output Structure
+
+The generated PRD must follow the exact document structure of the selected reference template. All templates share common structural elements that must always be present:
+
+#### Required Sections (All Templates)
+
+1. **Document Header**: `# [Template Type] PRD` followed by a bold subtitle line (`**Product Requirements Document — [Subtitle]**`)
+2. **Document Information**: Metadata table with fields (Project Name, Scope, Version, Date, Prepared By, Client/Project, Platform/Type, etc.)
+3. **Document Revision History**: Version tracking table with columns (Version, Date, Author, Description of Change) and at minimum 3 rows (Initial Draft, Review & Stakeholder Feedback, Final Approved Version)
+4. **Executive Summary**: 2-3 paragraph overview defining the product, scope, and purpose of the document
+5. **Type-Specific Body Sections**: Determined by the selected template type (see below)
+6. **Stakeholders & RACI / Sign-Off**: Role-based responsibility table with name, organization, responsibility, and approval authority columns
+7. **Appendix**: Supplementary content — glossary tables, reference document lists, severity scales, asset references, or revision protocols
+8. **Document Footer**: Three bold lines at the end — `**Document Classification:** Confidential` / `**Last Updated:** [DD MMM YYYY]` / `**Approval Status:** Pending Stakeholder Sign-Off`
+
+#### Template-Specific Body Sections
+
+Based on the selected template type from the interview, include the corresponding body sections:
+
+**UX Research PRD** (reference: `references/ux-research-prd.md`):
+- Research Background & Context (Business Context, Research Problem, Research Triggers)
+- Research Objectives & Questions (Primary Objectives table, Research Questions grouped by theme)
+- Research Methodology (Selected Methods table with rationale, Research Approach)
+- Participant Criteria (Target Profile table, Recruitment Plan table)
+- Research Plan & Timeline (Phase-by-phase timeline table)
+- Research Instruments (Discussion Guide structure, Usability Task Scenarios)
+- Analysis & Synthesis Framework (Qualitative Analysis, Quantitative Metrics table)
+- Deliverables (Deliverables table with format, audience, due date)
+- Research Ethics & Compliance (Data Privacy & Consent, Anonymization Protocol)
+
+**Mobile App UI/UX Design PRD** (reference: `references/mobile-uiux-prd.md`):
+- Project Overview (Background & Context, Problem Statement, Proposed Solution, Key Assumptions)
+- Goals & Objectives (Business Goals, Design Objectives, KPIs table)
+- Project Scope (In Scope, Out of Scope)
+- User Personas (Primary and Secondary persona tables)
+- User Flows & Screen Inventory (Critical User Journeys table, Screen Inventory table)
+- Design Requirements (Visual Design table, Interaction & Motion, Accessibility Requirements table)
+- Platform & Technical Specifications (Supported Devices & OS table, Design File Specifications)
+- Deliverables & Milestones (Phase-based deliverables table with format, due date, reviewer)
+
+**Website Development PRD** (reference: `references/website-dev-prd.md`):
+- Project Overview (Background, Business Objectives, Success Criteria table)
+- Scope of Work (In Scope, Out of Scope)
+- Functional Requirements (User Authentication & Access Control table, Content Management table, Core Features)
+- Non-Functional Requirements (Performance table, Security list, Browser & Device Compatibility table)
+- Page & Content Structure (Site Map table)
+- Integrations & Third-Party Services (Integration table with purpose, method, priority)
+- Deliverables & Project Timeline (Sprint/Phase-based timeline table)
+
+**Website UI Design PRD** (reference: `references/website-ui-design-prd.md`):
+- Design Discovery & Brand Alignment (Brand Foundation table, Design Inspirations & References)
+- Design System Requirements (Foundations table, Component Library Inventory table)
+- Page Design Specifications (Page Inventory & Priority table, Homepage Design Requirements table)
+- Interaction & Animation Requirements (Hover & Micro-Interactions table, Page Transitions & Loading)
+- Accessibility & Quality Standards (Standards table with requirement and verification)
+- Deliverables & Timeline (Phase-based deliverables table)
 
 ---
 
@@ -134,4 +191,7 @@ In your final chat message, present:
 
 ## References
 
-- [references/prd-template.md](file:///C:/Users/Jarvis/Documents/GitHub/Skills%20Playground/product-management/prd-generator/references/prd-template.md) — The reference template variations (UX Research, Mobile UI/UX, Web Dev, Web UI Design).
+- [references/ux-research-prd.md](file:///C:/Users/Jarvis/Documents/GitHub/Skills%20Playground/product-management/prd-generator/references/ux-research-prd.md) — UX Research PRD template (user interviews, usability testing, participant criteria, research ethics).
+- [references/mobile-uiux-prd.md](file:///C:/Users/Jarvis/Documents/GitHub/Skills%20Playground/product-management/prd-generator/references/mobile-uiux-prd.md) — Mobile App UI/UX Design PRD template (mobile platforms, visual design, screen inventory, accessibility).
+- [references/website-dev-prd.md](file:///C:/Users/Jarvis/Documents/GitHub/Skills%20Playground/product-management/prd-generator/references/website-dev-prd.md) — Website Development PRD template (full-stack web, CMS, SEO, functional & non-functional requirements, integrations).
+- [references/website-ui-design-prd.md](file:///C:/Users/Jarvis/Documents/GitHub/Skills%20Playground/product-management/prd-generator/references/website-ui-design-prd.md) — Website UI Design PRD template (web visual design, design systems, component library, page design specs).

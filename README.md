@@ -10,7 +10,7 @@ This repository is my personal lab for designing, testing, and refining custom A
 | :---------------- | :------ | :------------------------------------------------------------------------------- |
 | `hybrid-planning` | 1.1.0   | Enforces a strict, two-phase ARCHITECT/BUILDER workflow.                         |
 | `prd-spawnner`    | 1.0.0   | Automates professional PRD generation via structured interviews.                 |
-| `prd-generator`   | 1.0.0   | Advanced PRD generator supporting scratch & continuation workflows.            |
+| `prd-generator`   | 1.1.0   | Advanced PRD generator supporting scratch & continuation workflows.            |
 | `sprint-planner`  | 1.0.0   | Generates role-based sprint plan breakdowns from an input PRD.                 |
 | `synthesize-research` | 1.0.0 | Synthesizes user research data into structured findings and recommendations. |
 | `vibe-prd`        | 1.0.3   | Vibe-Coded-Ready-PRD generator with an interview process.                        |
