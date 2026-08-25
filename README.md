@@ -38,10 +38,10 @@ Install skills using [skills.sh](https://skills.sh/):
 
 ```bash
 # Install a specific skill
-npx skills add St4rkXc/skills codebase-documenter
+npx skills add St4rkXc/skills@codebase-documenter
 
 # Example: Install code-reviewer
-npx skills add St4rkXc/skills code-reviewer
+npx skills add St4rkXc/skills@code-reviewer
 ```
 
 Replace `<github-username>` with your GitHub username.
