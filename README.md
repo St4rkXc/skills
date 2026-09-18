@@ -44,8 +44,6 @@ npx skills add St4rkXc/skills@codebase-documenter
 npx skills add St4rkXc/skills@code-reviewer
 ```
 
-Replace `<github-username>` with your GitHub username.
-
 ## Why I Built This
 
 I believe that the true power of AI agents is unlocked not by _more_ code, but by _better_ processes. By formalizing my interactions into reusable skills, I can:
