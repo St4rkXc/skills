@@ -159,7 +159,7 @@ Follow the pattern for chosen mode (see `references/medium-pattern.md` or `refer
 
 ## Medium Pattern
 
-**Target**: 900–2800 words total. Each section ≈ 1 page (~160 words).
+**Target**: 900–2800 words total. **Minimum 6 sections**. Each section ≈ 1 page (~160 words).
 
 ### Section Structure (repeat per major topic)
 
@@ -219,7 +219,7 @@ Intinya, pemasaran dan penjualan adalah mesin yang menghidupkan seluruh fungsi b
 
 ## Detailed Pattern
 
-**Target**: 3000–8000 words total. Each section ≈ 1.5–3 pages (~195 words/page).
+**Target**: 3000–8000 words total. **Minimum 12 sections**. Each section ≈ 1.5–3 pages (~195 words/page).
 
 ### Section Structure (repeat per major topic)
 
@@ -349,6 +349,7 @@ Output is optimized for Notion import:
 Before delivering output, verify:
 
 - [ ] **Length target met**: Medium 900–2800 words, Detailed 3000–8000 words (or proportional)
+- [ ] **Section count met**: Medium minimum 6 sections, Detailed minimum 12 sections
 - [ ] **All key concepts covered**: 5–10 core terms from Phase 1 analysis appear in output
 - [ ] **Tables present**: Minimum 1 table per section
 - [ ] **Examples included**: Medium has 1 brief example per section; Detailed has 1–2 worked examples with steps

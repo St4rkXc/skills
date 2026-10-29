@@ -17,7 +17,7 @@ This repository is my personal lab for designing, testing, and refining custom A
 | `test-strategy`   | 1.0.0   | Generates comprehensive, engineering-grade test strategy documents.              |
 | `code-reviewer`   | 1.0.0   | Structured, severity-tagged code reviews with APPROVE/REQUEST CHANGES verdicts.  |
 | `codebase-documenter` | 1.0.0 | Enterprise-grade documentation: inline docblocks (12 languages) + project-level docs with diagrams. |
-| `thetold-er` | 1.0.0 | Generates structured study notes from PDF/PPT/DOCX in medium or detailed mode. |
+| `thetold-er` | 1.1.0 | Generates structured study notes from PDF/PPT/DOCX in medium or detailed mode. |
 
 ## What's Inside
 
