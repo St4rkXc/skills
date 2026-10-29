@@ -17,6 +17,7 @@ This repository is my personal lab for designing, testing, and refining custom A
 | `test-strategy`   | 1.0.0   | Generates comprehensive, engineering-grade test strategy documents.              |
 | `code-reviewer`   | 1.0.0   | Structured, severity-tagged code reviews with APPROVE/REQUEST CHANGES verdicts.  |
 | `codebase-documenter` | 1.0.0 | Enterprise-grade documentation: inline docblocks (12 languages) + project-level docs with diagrams. |
+| `thetold-er` | 1.0.0 | Generates structured study notes from PDF/PPT/DOCX in medium or detailed mode. |
 
 ## What's Inside
 
@@ -31,6 +32,7 @@ This repo acts as the home for my experimental workflows under the `code/` and `
 - **`code/test-strategy/`**: A toolset for generating comprehensive, engineering-grade test strategy documents from a PRD or feature spec.
 - **`code/code-reviewer/`**: A structured code review skill that interviews for context, applies an opinionated checklist, and delivers severity-tagged findings with a clear verdict.
 - **`code/codebase-documenter/`**: Enterprise-grade documentation skill. Generates language-idiomatic inline docblocks (JSDoc, TSDoc, phpDoc, PEP257, Javadoc, godoc, XML doc, rustdoc, YARD, Swift Markup, KDoc, dartdoc) and project-level docs (README, API reference, architecture overview with Mermaid/PlantUML diagrams, CHANGELOG). Triggered via `/doc`.
+- **`study/thetold-er/`**: Study notes generator. Transforms source materials (PDF, PPT, DOCX, MD, TXT) into structured markdown notes with two depth levels — medium (concise summaries) or detailed (comprehensive tutorials). Outputs Notion-ready markdown with tutor voice, analogies, examples, and tables. Triggered via `/thetold-er`.
 
 ## Installation
 
